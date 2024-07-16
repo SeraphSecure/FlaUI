@@ -23,15 +23,6 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
-	<PropertyGroup Label="Signing" Condition="'$(EnableSigning)'=='true'">
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>../../FlaUI.snk</AssemblyOriginatorKeyFile>
-		<PublicSign Condition="'$(OS)'!='Windows_NT'">true</PublicSign>
-		<PackageId>FlaUI.Core.Signed</PackageId>
-		<OutputPath>bin\$(Configuration)\Signed</OutputPath>
-		<IntermediateOutputPath>obj\$(Configuration)\Signed</IntermediateOutputPath>
-	</PropertyGroup>
-
   <ItemGroup>
     <Reference Include="System.Management" />
     <PackageReference Include="System.Management" Version="8.0.0" />

@@ -23,15 +23,6 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
-  <PropertyGroup Label="Signing" Condition="'$(EnableSigning)'=='true'">
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>../../FlaUI.snk</AssemblyOriginatorKeyFile>
-    <PublicSign Condition="'$(OS)'!='Windows_NT'">true</PublicSign>
-    <PackageId>FlaUI.UIA3.Signed</PackageId>
-    <OutputPath>bin\$(Configuration)\Signed</OutputPath>
-    <IntermediateOutputPath>obj\$(Configuration)\Signed</IntermediateOutputPath>
-  </PropertyGroup>
-
   <ItemGroup Label="Project References">
     <ProjectReference Include="..\FlaUI.Core\SeraphSecure.FlaUI.Core.csproj" />
   </ItemGroup>
