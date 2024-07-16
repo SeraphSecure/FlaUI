@@ -8,16 +8,16 @@
   <PropertyGroup Label="Package">
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageOutputPath>..\..\artifacts</PackageOutputPath>
-    <Version>5.0.0</Version>
+    <Version>4.0.0</Version>
     <Product>FlaUI</Product>
     <Authors>Seraph Secure</Authors>
     <Description>Library to use FlaUI with UIA3.</Description>
     <Copyright>Copyright (c) 2016-2022</Copyright>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/FlaUI/FlaUI</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/SeraphSecure/FlaUI</PackageProjectUrl>
     <PackageIcon>FlaUI.png</PackageIcon>
-    <RepositoryUrl>https://github.com/FlaUI/FlaUI</RepositoryUrl>
-    <PackageTags>UI Automation UIA2 UIA3 UIA System.Windows.Automation</PackageTags>
+    <RepositoryUrl>https://github.com/SeraphSecure/FlaUI</RepositoryUrl>
+    <PackageTags>UI Automation UIA3 UIA System.Windows.Automation</PackageTags>
     <IncludeSource>True</IncludeSource>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
