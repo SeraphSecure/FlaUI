@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace FlaUI.Core.Exceptions
 {
-    [Serializable]
     public class ElementNotEnabledException : FlaUIException
     {
         public ElementNotEnabledException()
@@ -22,11 +20,6 @@ namespace FlaUI.Core.Exceptions
 
         public ElementNotEnabledException(string message, Exception innerException)
             : base(message, innerException)
-        {
-        }
-
-        protected ElementNotEnabledException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
         }
     }

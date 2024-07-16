@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace FlaUI.Core.Exceptions
 {
-    [Serializable]
     public class ProxyAssemblyNotLoadedException : FlaUIException
     {
         public ProxyAssemblyNotLoadedException()
@@ -22,11 +20,6 @@ namespace FlaUI.Core.Exceptions
 
         public ProxyAssemblyNotLoadedException(string message, Exception innerException)
             : base(message, innerException)
-        {
-        }
-
-        protected ProxyAssemblyNotLoadedException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
         }
     }

@@ -5,7 +5,6 @@ using FlaUI.Core.Conditions;
 using FlaUI.Core.Definitions;
 using FlaUI.Core.EventHandlers;
 using FlaUI.Core.Identifiers;
-using FlaUI.Core.Overlay;
 
 namespace FlaUI.Core
 {
@@ -28,11 +27,6 @@ namespace FlaUI.Core
             PatternLibrary = patternLibrary;
             TextAttributeLibrary = textAttributeLibrary;
             ConditionFactory = new ConditionFactory(propertyLibrary);
-#if NETSTANDARD
-            OverlayManager = new NullOverlayManager();
-#else
-            OverlayManager = new WinFormsOverlayManager();
-#endif
             // Make sure all pattern ids are initialized
             var unused = PatternLibrary.AllForCurrentFramework;
         }
@@ -61,11 +55,6 @@ namespace FlaUI.Core
         /// Provides a factory to create conditions for searching.
         /// </summary>
         public ConditionFactory ConditionFactory { get; }
-
-        /// <summary>
-        /// Provides a manager for displaying overlays.
-        /// </summary>
-        public IOverlayManager OverlayManager { get; }
 
         /// <summary>
         /// Provides a factory to create <see cref="ITreeWalker"/>s.
@@ -157,7 +146,6 @@ namespace FlaUI.Core
         public void Dispose()
         {
             UnregisterAllEvents();
-            OverlayManager.Dispose();
         }
     }
 }

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace FlaUI.Core.Exceptions
 {
-    [Serializable]
     public class NoClickablePointException : FlaUIException
     {
         public NoClickablePointException()
@@ -22,11 +20,6 @@ namespace FlaUI.Core.Exceptions
 
         public NoClickablePointException(string message, Exception innerException)
             : base(message, innerException)
-        {
-        }
-
-        protected NoClickablePointException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
         }
     }

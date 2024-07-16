@@ -283,33 +283,6 @@ namespace FlaUI.Core.AutomationElements
         }
 
         /// <summary>
-        /// Captures the object as screenshot in <see cref="Bitmap"/> format.
-        /// </summary>
-        public Bitmap Capture()
-        {
-            return Capturing.Capture.Element(this).Bitmap;
-        }
-
-#if NETFRAMEWORK
-        /// <summary>
-        /// Captures the object as screenshot in a WPF friendly <see cref="System.Windows.Media.Imaging.BitmapImage"/> format.
-        /// </summary>
-        System.Windows.Media.Imaging.BitmapImage CaptureWpf()
-        {
-            return Capturing.Capture.Element(this).BitmapImage;
-        }
-#endif
-
-        /// <summary>
-        /// Captures the object as screenshot directly into the given file.
-        /// </summary>
-        /// <param name="filePath">The filepath where the screenshot should be saved.</param>
-        public void CaptureToFile(string filePath)
-        {
-            Capturing.Capture.Element(this).ToFile(filePath);
-        }
-
-        /// <summary>
         /// Gets a clickable point of the element.
         /// </summary>
         /// <exception cref="Exceptions.NoClickablePointException">Thrown when no clickable point was found</exception>

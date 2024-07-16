@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Runtime.Serialization;
 using FlaUI.Core.Identifiers;
 
 namespace FlaUI.Core.Exceptions
 {
-    [Serializable]
     public class PropertyNotCachedException : NotCachedException
     {
         private const string DefaultMessage = "The requested property is not cached";
@@ -38,22 +36,6 @@ namespace FlaUI.Core.Exceptions
             Property = property;
         }
 
-        protected PropertyNotCachedException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            Property = (PropertyId)info.GetValue("Property", typeof(PropertyId));
-        }
-
         public PropertyId Property { get; }
-
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            if (info == null)
-            {
-                throw new ArgumentNullException(nameof(info));
-            }
-            info.AddValue("Property", Property);
-            base.GetObjectData(info, context);
-        }
     }
 }

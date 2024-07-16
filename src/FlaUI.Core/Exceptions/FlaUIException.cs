@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace FlaUI.Core.Exceptions
 {
-    [Serializable]
     public class FlaUIException : Exception
     {
         public FlaUIException()
@@ -22,11 +20,6 @@ namespace FlaUI.Core.Exceptions
 
         public FlaUIException(string message, Exception innerException)
             : base(message, innerException)
-        {
-        }
-
-        protected FlaUIException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
         }
     }

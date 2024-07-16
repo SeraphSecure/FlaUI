@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace FlaUI.Core.Exceptions
 {
-    [Serializable]
     public class MethodNotSupportedException : FlaUIException
     {
         public MethodNotSupportedException()
@@ -22,11 +20,6 @@ namespace FlaUI.Core.Exceptions
 
         public MethodNotSupportedException(string message, Exception innerException)
             : base(message, innerException)
-        {
-        }
-
-        protected MethodNotSupportedException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
         }
     }

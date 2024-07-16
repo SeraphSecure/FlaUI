@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Runtime.Serialization;
 using FlaUI.Core.Identifiers;
 
 namespace FlaUI.Core.Exceptions
 {
-    [Serializable]
     public class PatternNotSupportedException : NotSupportedException
     {
         private const string DefaultMessage = "The requested pattern is not supported";
@@ -38,22 +36,6 @@ namespace FlaUI.Core.Exceptions
             Pattern = pattern;
         }
 
-        protected PatternNotSupportedException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            Pattern = (PatternId)info.GetValue("Pattern", typeof(PatternId));
-        }
-
         public PatternId Pattern { get; }
-
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            if (info == null)
-            {
-                throw new ArgumentNullException(nameof(info));
-            }
-            info.AddValue("Pattern", Pattern);
-            base.GetObjectData(info, context);
-        }
     }
 }
