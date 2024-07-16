@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Conditions;
-using FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Conditions;
+using SeraphSecure.FlaUI.Core.Definitions;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// Provides methods which can help in debugging.

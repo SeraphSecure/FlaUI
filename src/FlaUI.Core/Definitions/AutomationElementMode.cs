@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Definitions
+﻿namespace SeraphSecure.FlaUI.Core.Definitions
 {
     /// <summary>
     /// Contains values that specify the type of reference to use when returning UI Automation elements. 

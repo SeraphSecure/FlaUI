@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FlaUI.Core.Identifiers
+namespace SeraphSecure.FlaUI.Core.Identifiers
 {
     /// <summary>
     /// Base class for identifiers which are convertible

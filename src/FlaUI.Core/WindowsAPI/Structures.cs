@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 // ReSharper disable InconsistentNaming
 #pragma warning disable
-namespace FlaUI.Core.WindowsAPI
+namespace SeraphSecure.FlaUI.Core.WindowsAPI
 {
     [StructLayout(LayoutKind.Sequential)]
     public struct POINT

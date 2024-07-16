@@ -1,8 +1,8 @@
 ﻿using System;
-using FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Definitions;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3.Converters
+namespace SeraphSecure.FlaUI.UIA3.Converters
 {
     /// <summary>
     /// A converter to convert to <see cref="StyleType"/>.

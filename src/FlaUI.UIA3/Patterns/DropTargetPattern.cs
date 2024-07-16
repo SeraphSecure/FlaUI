@@ -1,10 +1,10 @@
-﻿using FlaUI.Core;
-using FlaUI.Core.Identifiers;
-using FlaUI.Core.Patterns;
-using FlaUI.UIA3.Identifiers;
+﻿using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.Patterns;
+using SeraphSecure.FlaUI.UIA3.Identifiers;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3.Patterns
+namespace SeraphSecure.FlaUI.UIA3.Patterns
 {
     public class DropTargetPattern : DropTargetPatternBase<UIA.IUIAutomationDropTargetPattern>
     {

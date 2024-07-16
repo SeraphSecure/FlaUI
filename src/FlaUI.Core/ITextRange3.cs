@@ -1,7 +1,7 @@
-﻿using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Identifiers;
+﻿using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     public interface ITextRange3 : ITextRange2
     {

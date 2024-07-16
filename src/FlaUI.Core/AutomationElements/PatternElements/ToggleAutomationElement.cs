@@ -1,9 +1,9 @@
 ﻿using System;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.Patterns;
-using FlaUI.Core.WindowsAPI;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Patterns;
+using SeraphSecure.FlaUI.Core.WindowsAPI;
 
-namespace FlaUI.Core.AutomationElements.PatternElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements.PatternElements
 {
     /// <summary>
     /// Class for an element that supports the <see cref="ITogglePattern"/>.

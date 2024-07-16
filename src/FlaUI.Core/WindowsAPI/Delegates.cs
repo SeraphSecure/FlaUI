@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FlaUI.Core.WindowsAPI
+namespace SeraphSecure.FlaUI.Core.WindowsAPI
 {
     public static class Delegates
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
-using FlaUI.Core.WindowsAPI;
+using SeraphSecure.FlaUI.Core.WindowsAPI;
 
-namespace FlaUI.Core.Input
+namespace SeraphSecure.FlaUI.Core.Input
 {
     /// <summary>
     /// Keyboard class to simulate key input.

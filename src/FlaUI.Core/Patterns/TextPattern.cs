@@ -1,10 +1,10 @@
 ﻿using System.Drawing;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.Identifiers;
-using FlaUI.Core.Patterns.Infrastructure;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.Patterns.Infrastructure;
 
-namespace FlaUI.Core.Patterns
+namespace SeraphSecure.FlaUI.Core.Patterns
 {
     public interface ITextPattern : IPattern
     {

@@ -1,8 +1,8 @@
-﻿using FlaUI.Core.AutomationElements.Infrastructure;
-using FlaUI.Core.Identifiers;
-using FlaUI.UIA3.Identifiers;
+﻿using SeraphSecure.FlaUI.Core.AutomationElements.Infrastructure;
+using SeraphSecure.FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.UIA3.Identifiers;
 
-namespace FlaUI.UIA3
+namespace SeraphSecure.FlaUI.UIA3
 {
     public class UIA3AutomationElementPatternAvailabilityPropertyIds : IAutomationElementPatternAvailabilityPropertyIds
     {

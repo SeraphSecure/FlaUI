@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Definitions
+﻿namespace SeraphSecure.FlaUI.Core.Definitions
 {
     /// <summary>
     /// Contains possible values for the CoalesceEvents property,

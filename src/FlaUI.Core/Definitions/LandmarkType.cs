@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Definitions
+﻿namespace SeraphSecure.FlaUI.Core.Definitions
 {
     /// <summary>
     /// This topic describes the named constants used to identify Microsoft UI Automation landmark types.

@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core
+﻿namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// An enum for the known framework types.

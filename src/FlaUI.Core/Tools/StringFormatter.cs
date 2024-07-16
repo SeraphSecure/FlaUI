@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FlaUI.Core.Tools
+namespace SeraphSecure.FlaUI.Core.Tools
 {
     /// <summary>
     /// Class with methods that help formatting strings.

@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Input
+﻿namespace SeraphSecure.FlaUI.Core.Input
 {
     /// <summary>
     /// An enum for the different mouse buttons.

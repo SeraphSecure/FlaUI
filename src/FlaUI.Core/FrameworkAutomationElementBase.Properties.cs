@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Drawing;
 using System.Globalization;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     public abstract partial class FrameworkAutomationElementBase : FrameworkAutomationElementBase.IProperties
     {

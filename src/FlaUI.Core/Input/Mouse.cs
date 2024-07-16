@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Permissions;
 using System.Threading;
-using FlaUI.Core.Tools;
-using FlaUI.Core.WindowsAPI;
+using SeraphSecure.FlaUI.Core.Tools;
+using SeraphSecure.FlaUI.Core.WindowsAPI;
 
-namespace FlaUI.Core.Input
+namespace SeraphSecure.FlaUI.Core.Input
 {
     /// <summary>
     /// Mouse class to simulate mouse input.

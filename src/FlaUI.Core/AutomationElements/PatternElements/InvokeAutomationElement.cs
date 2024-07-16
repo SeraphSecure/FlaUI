@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.Patterns;
+﻿using SeraphSecure.FlaUI.Core.Patterns;
 
-namespace FlaUI.Core.AutomationElements.PatternElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements.PatternElements
 {
     /// <summary>
     /// An element that supports the <see cref="IInvokePattern"/>.

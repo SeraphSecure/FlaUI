@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using FlaUI.Core.Exceptions;
-using FlaUI.Core.Input;
-using FlaUI.Core.WindowsAPI;
+using SeraphSecure.FlaUI.Core.Exceptions;
+using SeraphSecure.FlaUI.Core.Input;
+using SeraphSecure.FlaUI.Core.WindowsAPI;
 
-namespace FlaUI.Core.AutomationElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements
 {
     /// <summary>
     /// Class to interact with a textbox element.

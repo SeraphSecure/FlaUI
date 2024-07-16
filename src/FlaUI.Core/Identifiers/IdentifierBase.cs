@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace FlaUI.Core.Identifiers
+namespace SeraphSecure.FlaUI.Core.Identifiers
 {
     /// <summary>
     /// Base class for wrappers around various identifiers

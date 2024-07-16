@@ -3,13 +3,13 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.Logging;
-using FlaUI.Core.Tools;
-using FlaUI.Core.WindowsAPI;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Logging;
+using SeraphSecure.FlaUI.Core.Tools;
+using SeraphSecure.FlaUI.Core.WindowsAPI;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// Wrapper for an application which should be automated.

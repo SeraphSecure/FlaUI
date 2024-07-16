@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FlaUI.Core.Logging
+namespace SeraphSecure.FlaUI.Core.Logging
 {
     public class ConsoleLogger : LoggerBase
     {

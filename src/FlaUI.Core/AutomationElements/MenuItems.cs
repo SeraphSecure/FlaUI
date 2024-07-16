@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace FlaUI.Core.AutomationElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements
 {
     /// <summary>
     /// Represents a list of <see cref="MenuItem"/> elements.

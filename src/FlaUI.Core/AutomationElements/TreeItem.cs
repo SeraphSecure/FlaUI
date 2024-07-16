@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using FlaUI.Core.AutomationElements.PatternElements;
-using FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.AutomationElements.PatternElements;
+using SeraphSecure.FlaUI.Core.Definitions;
 
-namespace FlaUI.Core.AutomationElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements
 {
     /// <summary>
     /// Class to interact with a treeitem element.

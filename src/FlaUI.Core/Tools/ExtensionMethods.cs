@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using FlaUI.Core.WindowsAPI;
+using SeraphSecure.FlaUI.Core.WindowsAPI;
 
-namespace FlaUI.Core.Tools
+namespace SeraphSecure.FlaUI.Core.Tools
 {
     /// <summary>
     /// Provides various extension methods.

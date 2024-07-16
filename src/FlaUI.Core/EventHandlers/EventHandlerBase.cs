@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FlaUI.Core.EventHandlers
+namespace SeraphSecure.FlaUI.Core.EventHandlers
 {
     /// <summary>
     /// Base class for all event handlers.

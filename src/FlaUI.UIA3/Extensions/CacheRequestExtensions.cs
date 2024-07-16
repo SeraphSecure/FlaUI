@@ -1,8 +1,8 @@
-﻿using FlaUI.Core;
-using FlaUI.UIA3.Converters;
+﻿using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.UIA3.Converters;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3.Extensions
+namespace SeraphSecure.FlaUI.UIA3.Extensions
 {
     public static class CacheRequestExtensions
     {

@@ -1,9 +1,9 @@
-﻿using FlaUI.Core;
-using FlaUI.Core.Identifiers;
-using FlaUI.UIA3.Converters;
+﻿using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.UIA3.Converters;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3.Identifiers
+namespace SeraphSecure.FlaUI.UIA3.Identifiers
 {
     /// <summary>
     /// Class that holds all automation object ids available.

@@ -1,8 +1,8 @@
-﻿using FlaUI.Core;
-using FlaUI.Core.Identifiers;
-using FlaUI.UIA3.Identifiers;
+﻿using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.UIA3.Identifiers;
 
-namespace FlaUI.UIA3
+namespace SeraphSecure.FlaUI.UIA3
 {
     /// <summary>
     /// Implements a text attribute library for the UIA3 text attributes.

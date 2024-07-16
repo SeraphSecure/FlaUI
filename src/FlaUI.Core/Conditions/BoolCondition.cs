@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Conditions
+﻿namespace SeraphSecure.FlaUI.Core.Conditions
 {
     /// <summary>
     /// Represents a boolean condition.

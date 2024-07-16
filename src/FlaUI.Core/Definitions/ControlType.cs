@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Definitions
+﻿namespace SeraphSecure.FlaUI.Core.Definitions
 {
     /// <summary>
     /// Types of controls in Microsoft UI Automation.

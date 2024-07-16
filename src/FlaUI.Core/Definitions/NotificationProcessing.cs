@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Definitions
+﻿namespace SeraphSecure.FlaUI.Core.Definitions
 {
     /// <summary>
     /// Defines values that indicate how a notification should be processed.

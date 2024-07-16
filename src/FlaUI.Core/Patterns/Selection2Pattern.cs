@@ -1,7 +1,7 @@
-﻿using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Identifiers;
+﻿using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core.Patterns
+namespace SeraphSecure.FlaUI.Core.Patterns
 {
     public interface ISelection2Pattern : ISelectionPattern
     {

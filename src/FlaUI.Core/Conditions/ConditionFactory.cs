@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.Definitions;
+﻿using SeraphSecure.FlaUI.Core.Definitions;
 
-namespace FlaUI.Core.Conditions
+namespace SeraphSecure.FlaUI.Core.Conditions
 {
     /// <summary>
     /// Helper class with some commonly used conditions.

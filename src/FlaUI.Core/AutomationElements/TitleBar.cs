@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.Definitions;
+﻿using SeraphSecure.FlaUI.Core.Definitions;
 
-namespace FlaUI.Core.AutomationElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements
 {
     /// <summary>
     /// Class to interact with a titlebar element.

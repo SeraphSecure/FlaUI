@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Identifiers
+﻿namespace SeraphSecure.FlaUI.Core.Identifiers
 {
     /// <summary>
     /// A wrapper around the pattern ids

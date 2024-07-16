@@ -1,9 +1,9 @@
 ﻿using System;
-using FlaUI.Core;
-using FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.AutomationElements;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3.Converters
+namespace SeraphSecure.FlaUI.UIA3.Converters
 {
     /// <summary>
     /// Class that helps converting automation elements.

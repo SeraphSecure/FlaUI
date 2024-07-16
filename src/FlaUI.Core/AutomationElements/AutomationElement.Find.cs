@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FlaUI.Core.AutomationElements.Infrastructure;
-using FlaUI.Core.Conditions;
-using FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.AutomationElements.Infrastructure;
+using SeraphSecure.FlaUI.Core.Conditions;
+using SeraphSecure.FlaUI.Core.Definitions;
 
-namespace FlaUI.Core.AutomationElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements
 {
     public partial class AutomationElement : IAutomationElementFinder
     {

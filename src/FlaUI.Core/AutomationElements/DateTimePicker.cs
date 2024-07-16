@@ -1,11 +1,11 @@
 using System;
 using System.Drawing;
 using System.Globalization;
-using FlaUI.Core.Input;
-using FlaUI.Core.Tools;
-using FlaUI.Core.WindowsAPI;
+using SeraphSecure.FlaUI.Core.Input;
+using SeraphSecure.FlaUI.Core.Tools;
+using SeraphSecure.FlaUI.Core.WindowsAPI;
 
-namespace FlaUI.Core.AutomationElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements
 {
     /// <summary>
     /// Class to interact with a DateTimePicker element.

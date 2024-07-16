@@ -1,7 +1,7 @@
-﻿using FlaUI.Core.Definitions;
-using FlaUI.Core.Identifiers;
+﻿using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core.Conditions
+namespace SeraphSecure.FlaUI.Core.Conditions
 {
     /// <summary>
     /// A condition that is used to check for a property of an element.

@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
 
-namespace FlaUI.Core.Tools
+namespace SeraphSecure.FlaUI.Core.Tools
 {
     /// <summary>
     /// Static class that can be used to get information about the current operating system.

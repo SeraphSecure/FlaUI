@@ -1,8 +1,8 @@
-﻿using FlaUI.Core;
-using FlaUI.Core.Tools;
+﻿using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.Tools;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3
+namespace SeraphSecure.FlaUI.UIA3
 {
     public class UIA3TextRange2 : UIA3TextRange, ITextRange2
     {

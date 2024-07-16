@@ -1,7 +1,7 @@
-﻿using FlaUI.Core.Conditions;
-using FlaUI.Core.Definitions;
+﻿using SeraphSecure.FlaUI.Core.Conditions;
+using SeraphSecure.FlaUI.Core.Definitions;
 
-namespace FlaUI.Core.AutomationElements.Infrastructure
+namespace SeraphSecure.FlaUI.Core.AutomationElements.Infrastructure
 {
     /// <summary>
     /// Interface for the base methods to find <see cref="AutomationElement"/>s on an <see cref="AutomationElement"/>.

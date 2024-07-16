@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Xml;
 using System.Xml.XPath;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Definitions;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// Custom implementation of a <see cref="XPathNavigator" /> which allows

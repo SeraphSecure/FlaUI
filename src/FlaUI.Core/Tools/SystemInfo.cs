@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Management;
 
-namespace FlaUI.Core.Tools
+namespace SeraphSecure.FlaUI.Core.Tools
 {
     /// <summary>
     /// Utility class to get various system information.

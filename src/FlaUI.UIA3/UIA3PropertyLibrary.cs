@@ -1,9 +1,9 @@
-﻿using FlaUI.Core;
-using FlaUI.Core.AutomationElements.Infrastructure;
-using FlaUI.Core.Patterns;
-using FlaUI.UIA3.Patterns;
+﻿using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.AutomationElements.Infrastructure;
+using SeraphSecure.FlaUI.Core.Patterns;
+using SeraphSecure.FlaUI.UIA3.Patterns;
 
-namespace FlaUI.UIA3
+namespace SeraphSecure.FlaUI.UIA3
 {
     /// <summary>
     /// Implements a property library for the UIA3 patterns.

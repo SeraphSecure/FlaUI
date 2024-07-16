@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.EventHandlers
+﻿namespace SeraphSecure.FlaUI.Core.EventHandlers
 {
     /// <summary>
     /// Base class for event handlers that are tied to elements.

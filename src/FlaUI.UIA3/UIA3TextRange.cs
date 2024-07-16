@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Drawing;
-using FlaUI.Core;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.Identifiers;
-using FlaUI.Core.Tools;
-using FlaUI.UIA3.Converters;
+using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.Tools;
+using SeraphSecure.FlaUI.UIA3.Converters;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3
+namespace SeraphSecure.FlaUI.UIA3
 {
     public class UIA3TextRange : ITextRange
     {

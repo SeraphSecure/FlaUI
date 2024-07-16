@@ -1,7 +1,7 @@
 ﻿using System;
-using FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core.Exceptions
+namespace SeraphSecure.FlaUI.Core.Exceptions
 {
     public class PropertyNotCachedException : NotCachedException
     {

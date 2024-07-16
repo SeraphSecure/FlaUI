@@ -1,10 +1,10 @@
-﻿using FlaUI.Core;
-using FlaUI.Core.AutomationElements;
-using FlaUI.UIA3.Converters;
-using FlaUI.UIA3.Extensions;
+﻿using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.UIA3.Converters;
+using SeraphSecure.FlaUI.UIA3.Extensions;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3
+namespace SeraphSecure.FlaUI.UIA3
 {
     /// <summary>
     /// Class for a UIA3 tree walker.

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FlaUI.Core.Logging
+namespace SeraphSecure.FlaUI.Core.Logging
 {
     public abstract class LoggerBase : ILogger
     {

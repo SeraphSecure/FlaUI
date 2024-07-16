@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.AutomationElements;
+﻿using SeraphSecure.FlaUI.Core.AutomationElements;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// Interface for a class that implements a tree walker.

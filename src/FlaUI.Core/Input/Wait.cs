@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.WindowsAPI;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.WindowsAPI;
 
-namespace FlaUI.Core.Input
+namespace SeraphSecure.FlaUI.Core.Input
 {
     /// <summary>
     /// Class with various helper tools used in various places

@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Threading;
 
-namespace FlaUI.Core.Input
+namespace SeraphSecure.FlaUI.Core.Input
 {
     /// <summary>
     /// Interpolation tool to transition one or more points to another location during a time frame.

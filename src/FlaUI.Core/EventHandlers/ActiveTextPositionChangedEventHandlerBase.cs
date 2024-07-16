@@ -1,7 +1,7 @@
 ﻿using System;
-using FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.AutomationElements;
 
-namespace FlaUI.Core.EventHandlers
+namespace SeraphSecure.FlaUI.Core.EventHandlers
 {
     public abstract class ActiveTextPositionChangedEventHandlerBase : ElementEventHandlerBase
     {

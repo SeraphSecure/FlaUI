@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FlaUI.Core.Conditions
+namespace SeraphSecure.FlaUI.Core.Conditions
 {
     /// <summary>
     /// Base class for a condition.

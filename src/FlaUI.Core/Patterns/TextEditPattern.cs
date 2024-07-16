@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.Identifiers;
+﻿using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core.Patterns
+namespace SeraphSecure.FlaUI.Core.Patterns
 {
     public interface ITextEditPattern : ITextPattern
     {

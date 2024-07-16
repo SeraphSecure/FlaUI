@@ -1,7 +1,7 @@
-﻿using FlaUI.Core.Definitions;
-using FlaUI.Core.Patterns;
+﻿using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Patterns;
 
-namespace FlaUI.Core.AutomationElements.Scrolling
+namespace SeraphSecure.FlaUI.Core.AutomationElements.Scrolling
 {
     /// <summary>
     /// Base class for a scroll bar element.

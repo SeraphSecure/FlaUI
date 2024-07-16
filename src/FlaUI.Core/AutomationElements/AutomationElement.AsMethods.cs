@@ -1,7 +1,7 @@
 ﻿using System;
-using FlaUI.Core.AutomationElements.Scrolling;
+using SeraphSecure.FlaUI.Core.AutomationElements.Scrolling;
 
-namespace FlaUI.Core.AutomationElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements
 {
     public static partial class AutomationElementExtensions
     {

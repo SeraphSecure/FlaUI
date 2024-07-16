@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
 
-namespace FlaUI.Core.WindowsAPI
+namespace SeraphSecure.FlaUI.Core.WindowsAPI
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 #pragma warning disable CA1401 // P/Invokes should not be visible

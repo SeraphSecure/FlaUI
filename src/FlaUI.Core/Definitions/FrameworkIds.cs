@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace FlaUI.Core.Definitions
+namespace SeraphSecure.FlaUI.Core.Definitions
 {
     /// <summary>
     /// Helper class to convert between <see cref="FrameworkType"/> and string.

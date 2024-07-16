@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using System.Text;
 
-namespace FlaUI.Core.WindowsAPI
+namespace SeraphSecure.FlaUI.Core.WindowsAPI
 {
     public static class Oleacc
     {

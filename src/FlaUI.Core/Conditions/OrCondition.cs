@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FlaUI.Core.Conditions
+namespace SeraphSecure.FlaUI.Core.Conditions
 {
     /// <summary>
     /// A condition used to group two conditions together with an "or".

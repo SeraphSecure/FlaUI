@@ -1,7 +1,7 @@
 ﻿using System;
-using FlaUI.Core.Conditions;
+using SeraphSecure.FlaUI.Core.Conditions;
 
-namespace FlaUI.Core.Identifiers
+namespace SeraphSecure.FlaUI.Core.Identifiers
 {
     /// <summary>
     /// A wrapper around the property ids

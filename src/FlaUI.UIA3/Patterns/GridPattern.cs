@@ -1,13 +1,13 @@
-﻿using FlaUI.Core;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Identifiers;
-using FlaUI.Core.Patterns;
-using FlaUI.Core.Tools;
-using FlaUI.UIA3.Converters;
-using FlaUI.UIA3.Identifiers;
+﻿using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.Patterns;
+using SeraphSecure.FlaUI.Core.Tools;
+using SeraphSecure.FlaUI.UIA3.Converters;
+using SeraphSecure.FlaUI.UIA3.Identifiers;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3.Patterns
+namespace SeraphSecure.FlaUI.UIA3.Patterns
 {
     public class GridPattern : GridPatternBase<UIA.IUIAutomationGridPattern>
     {

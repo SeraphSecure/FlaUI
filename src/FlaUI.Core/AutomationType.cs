@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core
+﻿namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// Defines which version of UIAutomation should be used.

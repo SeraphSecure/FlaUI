@@ -2,13 +2,13 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
-using FlaUI.Core.Conditions;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.Exceptions;
-using FlaUI.Core.Tools;
-using FlaUI.Core.WindowsAPI;
+using SeraphSecure.FlaUI.Core.Conditions;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Exceptions;
+using SeraphSecure.FlaUI.Core.Tools;
+using SeraphSecure.FlaUI.Core.WindowsAPI;
 
-namespace FlaUI.Core.AutomationElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements
 {
     /// <summary>
     /// Class to interact with a window element.

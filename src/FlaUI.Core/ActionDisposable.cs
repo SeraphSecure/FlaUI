@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// An <see cref="IDisposable"/> implementation that executes an <see cref="Action"/> upon disposal.

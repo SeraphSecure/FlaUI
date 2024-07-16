@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Tools
+﻿namespace SeraphSecure.FlaUI.Core.Tools
 {
     /// <summary>
     /// Static class which provides localized texts of some control texts.

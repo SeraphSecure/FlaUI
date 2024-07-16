@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.AutomationElements.PatternElements;
+﻿using SeraphSecure.FlaUI.Core.AutomationElements.PatternElements;
 
-namespace FlaUI.Core.AutomationElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements
 {
     /// <summary>
     /// Class to interact with a combobox item element.

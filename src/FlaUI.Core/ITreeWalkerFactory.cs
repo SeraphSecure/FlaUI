@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.Conditions;
+﻿using SeraphSecure.FlaUI.Core.Conditions;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// Interface for a class to create <see cref="ITreeWalker"/> instances.

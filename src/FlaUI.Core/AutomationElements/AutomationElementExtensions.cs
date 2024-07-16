@@ -1,7 +1,7 @@
 ﻿using System;
-using FlaUI.Core.Tools;
+using SeraphSecure.FlaUI.Core.Tools;
 
-namespace FlaUI.Core.AutomationElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements
 {
     /// <summary>
     /// Contains extension methods for <see cref="AutomationElement"/>s.

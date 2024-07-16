@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using FlaUI.Core.Conditions;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.Conditions;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// A class which handles the cache requests.

@@ -1,6 +1,6 @@
 using System;
 
-namespace FlaUI.Core.Tools
+namespace SeraphSecure.FlaUI.Core.Tools
 {
     /// <summary>
     /// This object contains various settings that influence the behavior of retries.

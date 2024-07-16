@@ -1,7 +1,7 @@
-﻿using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Patterns.Infrastructure;
+﻿using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Patterns.Infrastructure;
 
-namespace FlaUI.Core.Patterns
+namespace SeraphSecure.FlaUI.Core.Patterns
 {
     public interface ISpreadsheetPattern : IPattern
     {

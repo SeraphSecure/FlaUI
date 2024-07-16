@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.Patterns;
+﻿using SeraphSecure.FlaUI.Core.Patterns;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     public abstract partial class FrameworkAutomationElementBase : FrameworkAutomationElementBase.IFrameworkPatterns
     {

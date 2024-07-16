@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.Patterns;
+﻿using SeraphSecure.FlaUI.Core.Patterns;
 
-namespace FlaUI.Core.Definitions
+namespace SeraphSecure.FlaUI.Core.Definitions
 {
     /// <summary>
     /// Contains values that specify the dock position of an object, represented by a <see cref="IDockPattern"/>, within a docking container.

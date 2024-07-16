@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FlaUI.Core.Conditions
+namespace SeraphSecure.FlaUI.Core.Conditions
 {
     /// <summary>
     /// Base class for a junction condition.

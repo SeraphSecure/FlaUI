@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FlaUI.Core.Tools
+namespace SeraphSecure.FlaUI.Core.Tools
 {
     /// <summary>
     /// Class which represents a result when a retry method was used.

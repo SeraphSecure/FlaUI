@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace FlaUI.Core.WindowsAPI
+namespace SeraphSecure.FlaUI.Core.WindowsAPI
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static class Kernel32

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FlaUI.Core.Definitions
+namespace SeraphSecure.FlaUI.Core.Definitions
 {
     /// <summary>
     /// Contains values for the VisualEffects attribute.

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Threading;
-using FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.AutomationElements;
 
-namespace FlaUI.Core.Tools
+namespace SeraphSecure.FlaUI.Core.Tools
 {
     /// <summary>
     /// Static class with methods for retrying actions.

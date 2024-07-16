@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Drawing;
 using System.Globalization;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.Tools;
-using FlaUI.Core.WindowsAPI;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Tools;
+using SeraphSecure.FlaUI.Core.WindowsAPI;
 
-namespace FlaUI.UIA3.Converters
+namespace SeraphSecure.FlaUI.UIA3.Converters
 {
     /// <summary>
     /// Class that helps converting various values between native and FlaUIs format.

@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Patterns.Infrastructure
+﻿namespace SeraphSecure.FlaUI.Core.Patterns.Infrastructure
 {
     /// <summary>
     /// Interface for an automation pattern.

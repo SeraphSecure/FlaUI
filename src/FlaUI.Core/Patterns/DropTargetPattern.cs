@@ -1,7 +1,7 @@
-﻿using FlaUI.Core.Identifiers;
-using FlaUI.Core.Patterns.Infrastructure;
+﻿using SeraphSecure.FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.Patterns.Infrastructure;
 
-namespace FlaUI.Core.Patterns
+namespace SeraphSecure.FlaUI.Core.Patterns
 {
     public interface IDropTargetPattern : IPattern
     {

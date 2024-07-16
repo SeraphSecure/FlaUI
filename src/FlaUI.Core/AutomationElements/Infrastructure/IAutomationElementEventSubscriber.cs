@@ -1,9 +1,9 @@
 ﻿using System;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.EventHandlers;
-using FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.EventHandlers;
+using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core.AutomationElements.Infrastructure
+namespace SeraphSecure.FlaUI.Core.AutomationElements.Infrastructure
 {
     /// <summary>
     /// Interface for methods to subscribe to events on an <see cref="AutomationElement"/>.

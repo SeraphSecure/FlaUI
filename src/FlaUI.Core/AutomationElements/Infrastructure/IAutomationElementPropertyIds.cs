@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.Identifiers;
+﻿using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core.AutomationElements.Infrastructure
+namespace SeraphSecure.FlaUI.Core.AutomationElements.Infrastructure
 {
     /// <summary>
     /// Interface for a class that contains all automation element property ids.

@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.Patterns;
+﻿using SeraphSecure.FlaUI.Core.Patterns;
 
-namespace FlaUI.Core.Definitions
+namespace SeraphSecure.FlaUI.Core.Definitions
 {
     /// <summary>
     /// Contains possible values for the <see cref="ITransform2Pattern.ZoomByUnit"/> method, which zooms the viewport of a control by the specified unit.

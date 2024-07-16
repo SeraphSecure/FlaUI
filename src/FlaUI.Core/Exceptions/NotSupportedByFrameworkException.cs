@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FlaUI.Core.Exceptions
+namespace SeraphSecure.FlaUI.Core.Exceptions
 {
     public class NotSupportedByFrameworkException : FlaUIException
     {

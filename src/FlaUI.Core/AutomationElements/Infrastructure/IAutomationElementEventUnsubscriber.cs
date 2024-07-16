@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.EventHandlers;
+﻿using SeraphSecure.FlaUI.Core.EventHandlers;
 
-namespace FlaUI.Core.AutomationElements.Infrastructure
+namespace SeraphSecure.FlaUI.Core.AutomationElements.Infrastructure
 {
     /// <summary>
     /// Interface for methods to unsubscribe to events on an <see cref="AutomationElement"/>.

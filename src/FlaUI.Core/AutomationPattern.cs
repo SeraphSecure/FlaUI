@@ -1,8 +1,8 @@
 ﻿using System;
-using FlaUI.Core.Identifiers;
-using FlaUI.Core.Patterns.Infrastructure;
+using SeraphSecure.FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.Patterns.Infrastructure;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// Interface for an automation pattern object.

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Drawing;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Conditions;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.EventHandlers;
-using FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Conditions;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.EventHandlers;
+using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// Base class for the native automation object.

@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using FlaUI.Core;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.EventHandlers;
-using FlaUI.Core.Tools;
-using FlaUI.UIA3.Converters;
-using FlaUI.UIA3.EventHandlers;
-using FlaUI.UIA3.Extensions;
+using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.EventHandlers;
+using SeraphSecure.FlaUI.Core.Tools;
+using SeraphSecure.FlaUI.UIA3.Converters;
+using SeraphSecure.FlaUI.UIA3.EventHandlers;
+using SeraphSecure.FlaUI.UIA3.Extensions;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3
+namespace SeraphSecure.FlaUI.UIA3
 {
     /// <summary>
     /// Automation implementation for UIA3.

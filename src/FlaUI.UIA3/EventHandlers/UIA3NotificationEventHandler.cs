@@ -1,11 +1,11 @@
 ﻿using System;
-using FlaUI.Core;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.EventHandlers;
+using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.EventHandlers;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3.EventHandlers
+namespace SeraphSecure.FlaUI.UIA3.EventHandlers
 {
     public class UIA3NotificationEventHandler : NotificationEventHandlerBase, UIA.IUIAutomationNotificationEventHandler
     {

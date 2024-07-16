@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.AutomationElements;
+﻿using SeraphSecure.FlaUI.Core.AutomationElements;
 
-namespace FlaUI.Core.Patterns
+namespace SeraphSecure.FlaUI.Core.Patterns
 {
     public interface IText2Pattern : ITextPattern
     {

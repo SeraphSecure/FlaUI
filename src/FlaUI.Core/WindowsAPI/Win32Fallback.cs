@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Text;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Definitions;
 
-namespace FlaUI.Core.WindowsAPI
+namespace SeraphSecure.FlaUI.Core.WindowsAPI
 {
     /// <summary>
     /// This class wraps the various win32 fallback methods which are used in case UIA fails.

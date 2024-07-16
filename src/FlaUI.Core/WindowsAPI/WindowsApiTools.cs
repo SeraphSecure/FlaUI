@@ -4,7 +4,7 @@ using System.Linq;
 using System.Management;
 using System.Security;
 
-namespace FlaUI.Core.WindowsAPI
+namespace SeraphSecure.FlaUI.Core.WindowsAPI
 {
     public static class WindowsApiTools
     {

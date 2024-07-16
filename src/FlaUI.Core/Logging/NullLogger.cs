@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Logging
+﻿namespace SeraphSecure.FlaUI.Core.Logging
 {
     public class NullLogger : LoggerBase
     {

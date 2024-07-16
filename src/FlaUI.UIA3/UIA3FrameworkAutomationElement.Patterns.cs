@@ -1,9 +1,9 @@
-﻿using FlaUI.Core;
-using FlaUI.Core.Patterns;
-using FlaUI.UIA3.Patterns;
+﻿using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.Patterns;
+using SeraphSecure.FlaUI.UIA3.Patterns;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3
+namespace SeraphSecure.FlaUI.UIA3
 {
     public partial class UIA3FrameworkAutomationElement
     {

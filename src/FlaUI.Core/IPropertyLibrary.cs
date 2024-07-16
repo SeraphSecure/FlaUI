@@ -1,7 +1,7 @@
-﻿using FlaUI.Core.AutomationElements.Infrastructure;
-using FlaUI.Core.Patterns;
+﻿using SeraphSecure.FlaUI.Core.AutomationElements.Infrastructure;
+using SeraphSecure.FlaUI.Core.Patterns;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// Interface for a property library.

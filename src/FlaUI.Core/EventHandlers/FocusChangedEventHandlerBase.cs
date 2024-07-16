@@ -1,7 +1,7 @@
 ﻿using System;
-using FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.AutomationElements;
 
-namespace FlaUI.Core.EventHandlers
+namespace SeraphSecure.FlaUI.Core.EventHandlers
 {
     /// <summary>
     /// Base event handler for focus changed event handlers.

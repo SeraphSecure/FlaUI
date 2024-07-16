@@ -1,8 +1,8 @@
 ﻿using System;
-using FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Definitions;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3.Converters
+namespace SeraphSecure.FlaUI.UIA3.Converters
 {
     /// <summary>
     /// Converter with converts between <see cref="UIA.UIA_LandmarkTypeIds"/> and FlaUIs <see cref="LandmarkType"/>.

@@ -1,8 +1,8 @@
-﻿using FlaUI.Core;
-using FlaUI.Core.Conditions;
-using FlaUI.UIA3.Converters;
+﻿using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.Conditions;
+using SeraphSecure.FlaUI.UIA3.Converters;
 
-namespace FlaUI.UIA3
+namespace SeraphSecure.FlaUI.UIA3
 {
     /// <summary>
     /// Factory to create tree walkers for UIA3.

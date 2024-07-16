@@ -1,7 +1,7 @@
-﻿using FlaUI.Core;
+﻿using SeraphSecure.FlaUI.Core;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3.Converters
+namespace SeraphSecure.FlaUI.UIA3.Converters
 {
     /// <summary>
     /// A class for converting text ranges between native and FlaUIs implementation.

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FlaUI.Core.AutomationElements.Scrolling
+namespace SeraphSecure.FlaUI.Core.AutomationElements.Scrolling
 {
     /// <summary>
     /// A horizontal scrollbar element.

@@ -1,8 +1,8 @@
 ﻿using System;
-using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.AutomationElements;
+using SeraphSecure.FlaUI.Core.Definitions;
 
-namespace FlaUI.Core.EventHandlers
+namespace SeraphSecure.FlaUI.Core.EventHandlers
 {
     /// <summary>
     /// Base event handler for structure changed event handlers.

@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.Identifiers;
+﻿using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// Interface for a pattern library.

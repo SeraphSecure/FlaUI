@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3.Extensions
+namespace SeraphSecure.FlaUI.UIA3.Extensions
 {
     public static class PointExtensions
     {

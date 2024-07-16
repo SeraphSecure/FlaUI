@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using FlaUI.Core.Definitions;
-using FlaUI.Core.Patterns;
-using FlaUI.Core.Tools;
+using SeraphSecure.FlaUI.Core.Definitions;
+using SeraphSecure.FlaUI.Core.Patterns;
+using SeraphSecure.FlaUI.Core.Tools;
 
-namespace FlaUI.Core.AutomationElements
+namespace SeraphSecure.FlaUI.Core.AutomationElements
 {
     /// <summary>
     /// Class to interact with a WinForms DataGridView

@@ -1,7 +1,7 @@
-﻿using FlaUI.Core;
-using FlaUI.Core.Identifiers;
+﻿using SeraphSecure.FlaUI.Core;
+using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.UIA3
+namespace SeraphSecure.FlaUI.UIA3
 {
     /// <summary>
     /// Implements a pattern library for the UIA3 patterns.

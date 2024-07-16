@@ -1,4 +1,4 @@
-﻿namespace FlaUI.Core.Conditions
+﻿namespace SeraphSecure.FlaUI.Core.Conditions
 {
     /// <summary>
     /// A condition that negates a given condition.

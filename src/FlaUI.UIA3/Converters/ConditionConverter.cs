@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using FlaUI.Core.Conditions;
+using SeraphSecure.FlaUI.Core.Conditions;
 using UIA = Interop.UIAutomationClient;
 
-namespace FlaUI.UIA3.Converters
+namespace SeraphSecure.FlaUI.UIA3.Converters
 {
     /// <summary>
     /// Class which helps converting conditions between native and FlaUIs conditions.

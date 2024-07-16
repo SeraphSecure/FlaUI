@@ -1,7 +1,7 @@
 ﻿using System;
-using FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core.Patterns.Infrastructure
+namespace SeraphSecure.FlaUI.Core.Patterns.Infrastructure
 {
     /// <summary>
     /// Base class for a pattern implementation.

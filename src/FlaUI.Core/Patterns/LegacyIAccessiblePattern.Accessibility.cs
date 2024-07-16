@@ -1,7 +1,7 @@
 ﻿#if NETFRAMEWORK
 using Accessibility;
 
-namespace FlaUI.Core.Patterns
+namespace SeraphSecure.FlaUI.Core.Patterns
 {
     public partial interface ILegacyIAccessiblePattern
     {

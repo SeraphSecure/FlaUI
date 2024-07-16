@@ -1,7 +1,7 @@
 ﻿using System;
-using FlaUI.Core.Identifiers;
+using SeraphSecure.FlaUI.Core.Identifiers;
 
-namespace FlaUI.Core
+namespace SeraphSecure.FlaUI.Core
 {
     /// <summary>
     /// Inferface for property objects.

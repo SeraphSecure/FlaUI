@@ -33,7 +33,7 @@
   </PropertyGroup>
 
   <ItemGroup Label="Project References">
-    <ProjectReference Include="..\FlaUI.Core\FlaUI.Core.csproj" />
+    <ProjectReference Include="..\FlaUI.Core\SeraphSecure.FlaUI.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup Label="Additional nuget files">

@@ -1,6 +1,6 @@
-﻿using FlaUI.Core.Patterns;
+﻿using SeraphSecure.FlaUI.Core.Patterns;
 
-namespace FlaUI.Core.Definitions
+namespace SeraphSecure.FlaUI.Core.Definitions
 {
     /// <summary>
     /// Contains values that specify the toggle state of a Microsoft UI Automation element that implements the <see cref="ITogglePattern"/>.
