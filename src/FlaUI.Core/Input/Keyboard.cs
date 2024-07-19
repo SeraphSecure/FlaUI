@@ -15,26 +15,26 @@ namespace SeraphSecure.FlaUI.Core.Input
         /// <summary>
         /// Types the given text, one char after another.
         /// </summary>
-        public static void Type(string text)
+        public static void Type(string text, nint? extraInfo = null)
         {
             foreach (var c in text)
             {
-                Type(c);
+                Type(c, extraInfo);
             }
         }
 
         /// <summary>
         /// Types the given character.
         /// </summary>
-        public static void Type(char character)
+        public static void Type(char character, nint? extraInfo = null)
         {
             var code = User32.VkKeyScan(character);
             // Check if the char is unicode or no virtual key could be found
             if (character > 0xFE || code == -1)
             {
                 // It seems to be unicode
-                SendInput(character, true, false, false, true);
-                SendInput(character, false, false, false, true);
+                SendInput(character, true, false, false, true, extraInfo);
+                SendInput(character, false, false, false, true, extraInfo);
             }
             else
             {
@@ -70,8 +70,8 @@ namespace SeraphSecure.FlaUI.Core.Input
                     Press(mod);
                 }
                 // Type the effective key
-                SendInput(low, true, false, false, false);
-                SendInput(low, false, false, false, false);
+                SendInput(low, true, false, false, false, extraInfo);
+                SendInput(low, false, false, false, false, extraInfo);
                 // Release the modifiers
                 foreach (var mod in Enumerable.Reverse(modifiers))
                 {
@@ -103,6 +103,22 @@ namespace SeraphSecure.FlaUI.Core.Input
         }
 
         /// <summary>
+        /// Types the given keys, one by one, using the extra info pointer.
+        /// </summary>
+        public static void Type(VirtualKeyShort[] virtualKeys, nint extraInfo)
+        {
+            if (virtualKeys == null)
+            {
+                return;
+            }
+            foreach (var key in virtualKeys)
+            {
+                Press(key, extraInfo);
+                Release(key, extraInfo);
+            }
+        }
+
+        /// <summary>
         /// Types the given keys simultaneously (starting with the first).
         /// </summary>
         public static void TypeSimultaneously(params VirtualKeyShort[] virtualKeys)
@@ -122,69 +138,88 @@ namespace SeraphSecure.FlaUI.Core.Input
         }
 
         /// <summary>
+        /// Types the given keys simultaneously (starting with the first), using the extra info pointer.
+        /// </summary>
+        public static void TypeSimultaneously(VirtualKeyShort[] virtualKeys, nint extraInfo)
+        {
+            if (virtualKeys == null)
+            {
+                return;
+            }
+            foreach (var key in virtualKeys)
+            {
+                Press(key, extraInfo);
+            }
+            foreach (var key in virtualKeys.Reverse())
+            {
+                Release(key, extraInfo);
+            }
+        }
+
+        /// <summary>
         /// Types the given scan-code.
         /// </summary>
-        public static void TypeScanCode(ushort scanCode, bool isExtendedKey)
+        public static void TypeScanCode(ushort scanCode, bool isExtendedKey, nint? extraInfo = null)
         {
-            PressScanCode(scanCode, isExtendedKey);
-            ReleaseScanCode(scanCode, isExtendedKey);
+            PressScanCode(scanCode, isExtendedKey, extraInfo);
+            ReleaseScanCode(scanCode, isExtendedKey, extraInfo);
         }
 
         /// <summary>
         /// Types the given virtual key-code.
         /// </summary>
-        public static void TypeVirtualKeyCode(ushort virtualKeyCode)
+        public static void TypeVirtualKeyCode(ushort virtualKeyCode, nint? extraInfo = null)
         {
-            PressVirtualKeyCode(virtualKeyCode);
-            ReleaseVirtualKeyCode(virtualKeyCode);
+            PressVirtualKeyCode(virtualKeyCode, extraInfo);
+            ReleaseVirtualKeyCode(virtualKeyCode, extraInfo);   
         }
 
         /// <summary>
         /// Presses the given key.
         /// </summary>
-        public static void Press(VirtualKeyShort virtualKey)
+        public static void Press(VirtualKeyShort virtualKey, nint? extraInfo = null)
         {
-            PressVirtualKeyCode((ushort)virtualKey);
+            PressVirtualKeyCode((ushort)virtualKey, extraInfo);
         }
 
         /// <summary>
         /// Presses the given scan-code.
         /// </summary>
-        public static void PressScanCode(ushort scanCode, bool isExtendedKey)
+        public static void PressScanCode(ushort scanCode, bool isExtendedKey, nint? extraInfo = null)
         {
-            SendInput(scanCode, true, true, isExtendedKey, false);
+            SendInput(scanCode, true, true, isExtendedKey, false, extraInfo);
         }
 
         /// <summary>
         /// Presses the given virtual key-code.
         /// </summary>
-        public static void PressVirtualKeyCode(ushort virtualKeyCode)
+        public static void PressVirtualKeyCode(ushort virtualKeyCode, nint? extraInfo = null)
         {
-            SendInput(virtualKeyCode, true, false, false, false);
+            SendInput(virtualKeyCode, true, false, false, false, extraInfo);
         }
 
         /// <summary>
         /// Releases the given key.
         /// </summary>
-        public static void Release(VirtualKeyShort virtualKey)
+        public static void Release(VirtualKeyShort virtualKey, nint? extraInfo = null)
         {
-            ReleaseVirtualKeyCode((ushort)virtualKey);
+            ReleaseVirtualKeyCode((ushort)virtualKey, extraInfo);
         }
 
         /// <summary>
         /// Releases the given scan-code.
         /// </summary>
-        public static void ReleaseScanCode(ushort scanCode, bool isExtendedKey)
+        public static void ReleaseScanCode(ushort scanCode, bool isExtendedKey, nint? extraInfo = null)
         {
-            SendInput(scanCode, false, true, isExtendedKey, false);
+            SendInput(scanCode, false, true, isExtendedKey, false, extraInfo);
         }
 
         /// <summary>
         /// Releases the given virtual key-code.
         /// </summary>
-        public static void ReleaseVirtualKeyCode(ushort virtualKeyCode)
+        public static void ReleaseVirtualKeyCode(ushort virtualKeyCode, nint? extraInfo = null)
         {
-            SendInput(virtualKeyCode, false, false, false, false);
+            SendInput(virtualKeyCode, false, false, false, false, extraInfo);
         }
 
         /// <summary>
@@ -207,6 +242,25 @@ namespace SeraphSecure.FlaUI.Core.Input
         }
 
         /// <summary>
+        /// Presses the given keys and releases them when the returned object is disposed, using the given extra info pointer.
+        /// </summary>
+        public static IDisposable Pressing(VirtualKeyShort[] virtualKeys, nint extraInfo)
+        {
+            foreach (var key in virtualKeys)
+            {
+                Press(key, extraInfo);
+            }
+
+            return new ActionDisposable(() =>
+            {
+                foreach (var key in virtualKeys.Reverse())
+                {
+                    Release(key, extraInfo);
+                }
+            });
+        }
+
+        /// <summary>
         /// Checks if a given byte has a specific VkKeyScan-modifier set.
         /// </summary>
         private static bool HasScanModifier(byte b, VkKeyScanModifiers modifierToTest)
@@ -222,13 +276,14 @@ namespace SeraphSecure.FlaUI.Core.Input
         /// <param name="isScanCode">Flag if the code is the scan code or the virtual key code.</param>
         /// <param name="isExtended">Flag if the key is an extended key.</param>
         /// <param name="isUnicode">Flag if the key is unicode.</param>
-        private static void SendInput(ushort keyCode, bool isKeyDown, bool isScanCode, bool isExtended, bool isUnicode)
+        /// <param name="extraInfo">Extra info pointer to pass to the message. If not given, this defaults to <seealso cref="User32.GetMessageExtraInfo"/>.</param>
+        private static void SendInput(ushort keyCode, bool isKeyDown, bool isScanCode, bool isExtended, bool isUnicode, nint? extraInfo)
         {
             // Prepare the basic object
             var keyboardInput = new KEYBDINPUT
             {
                 time = 0,
-                dwExtraInfo = User32.GetMessageExtraInfo()
+                dwExtraInfo = extraInfo ?? User32.GetMessageExtraInfo()
             };
 
             // Add the "key-up" flag if needed. By default it is "key-down"
