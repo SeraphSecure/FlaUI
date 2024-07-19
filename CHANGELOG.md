@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.0.1 (2024-07-19)
+### Enhancements
+  * Added support for passing a custom extra info pointer to Keyboard API's
+
 ## 4.0.0 (2022-09-24)
 ### Breaking changes
   * Removed support for .NET Framework below 4.8

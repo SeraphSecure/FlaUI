@@ -8,7 +8,7 @@
   <PropertyGroup Label="Package">
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageOutputPath>..\..\artifacts</PackageOutputPath>
-    <Version>4.0.0</Version>
+    <Version>4.0.0.1</Version>
     <Product>FlaUI</Product>
     <Authors>Seraph Secure</Authors>
     <Description>Library with base elements used in the concrete implementations of FlaUI.</Description>
