@@ -26,7 +26,6 @@
   <ItemGroup>
     <Reference Include="System.Management" />
     <PackageReference Include="System.Management" Version="8.0.0" />
-		<PackageReference Include="System.Diagnostics.PerformanceCounter" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup Label="Additional nuget files">
