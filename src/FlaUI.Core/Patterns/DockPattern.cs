@@ -21,7 +21,7 @@ namespace SeraphSecure.FlaUI.Core.Patterns
     public abstract class DockPatternBase<TNativePattern> : PatternBase<TNativePattern>, IDockPattern
         where TNativePattern : class
     {
-        private AutomationProperty<DockPosition> _dockPosition;
+        private AutomationProperty<DockPosition>? _dockPosition;
 
         protected DockPatternBase(FrameworkAutomationElementBase frameworkAutomationElement, TNativePattern nativePattern) : base(frameworkAutomationElement, nativePattern)
         {

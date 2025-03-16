@@ -18,7 +18,7 @@ namespace SeraphSecure.FlaUI.UIA3.Patterns
         {
         }
 
-        public AutomationElement FindItemByProperty(AutomationElement startAfter, PropertyId property, object value)
+        public AutomationElement FindItemByProperty(AutomationElement? startAfter, PropertyId? property, object? value)
         {
             var foundNativeElement = Com.Call(() =>
                 NativePattern.FindItemByProperty(

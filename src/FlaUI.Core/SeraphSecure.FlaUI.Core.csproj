@@ -3,6 +3,8 @@
   <PropertyGroup Label="Build">
     <TargetFrameworks>net8.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Nullable>enable</Nullable>
+    <LangVersion>11.0</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
