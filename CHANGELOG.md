@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.0.0.1 (2025-03-16)
+### Enhancements
+  * Merged 5.0.0 from upstream into Seraph Secure fork
+
 ## 5.0.0 (2024-12-08)
 ### Breaking changes
   * Removed support for .NET Standard, .NET Core 3.1, .NET 5
@@ -13,6 +17,11 @@
 ### Bug fixes
   * Fixed very large combo boxes (thanks @tomersalem)
   * Fix Mouse.Scroll not working in .NET 9 (thanks @matthew-a-thomas)
+
+## 4.0.0.2 (2024-10-23)
+### Enhancements
+  * Remove System.Drawing.Common dependency
+  * Removed System.Diagnostics.PerformanceCounter dependency
 
 ## 4.0.0.1 (2024-07-19)
 ### Enhancements
