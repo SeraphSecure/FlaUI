@@ -222,7 +222,7 @@ namespace SeraphSecure.FlaUI.Core.WindowsAPI
             return hwndEdit;
         }
 
-        internal static string GetWindowClassName(IntPtr handle)
+        internal static string? GetWindowClassName(IntPtr handle)
         {
             if (handle == IntPtr.Zero)
             {

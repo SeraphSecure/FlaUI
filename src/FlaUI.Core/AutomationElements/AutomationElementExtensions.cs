@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using SeraphSecure.FlaUI.Core.Tools;
 
 namespace SeraphSecure.FlaUI.Core.AutomationElements
@@ -11,7 +12,8 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// <summary>
         /// Waits until the element has a clickable point.
         /// </summary>
-        public static T WaitUntilClickable<T>(this T self, TimeSpan? timeout = null) where T : AutomationElement
+        [return: NotNullIfNotNull(nameof(self))]
+        public static T? WaitUntilClickable<T>(this T? self, TimeSpan? timeout = null) where T : AutomationElement
         {
             if (self != null)
             {
@@ -23,7 +25,8 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// <summary>
         /// Waits until the element is enabled.
         /// </summary>
-        public static T WaitUntilEnabled<T>(this T self, TimeSpan? timeout = null) where T : AutomationElement
+        [return: NotNullIfNotNull(nameof(self))]
+        public static T? WaitUntilEnabled<T>(this T? self, TimeSpan? timeout = null) where T : AutomationElement
         {
             if (self != null)
             {

@@ -69,6 +69,11 @@ namespace SeraphSecure.FlaUI.Core.Input
                 {
                     Press(mod);
                 }
+                // Wait a moment for modifiers to be pressed
+                if (modifiers.Any())
+                {
+                    Wait.UntilInputIsProcessed();
+                }
                 // Type the effective key
                 SendInput(low, true, false, false, false, extraInfo);
                 SendInput(low, false, false, false, false, extraInfo);
