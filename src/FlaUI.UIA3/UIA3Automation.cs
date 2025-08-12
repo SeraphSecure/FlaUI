@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -96,49 +98,49 @@ namespace SeraphSecure.FlaUI.UIA3
         public UIA.IUIAutomation6 NativeAutomation6 => GetAutomationAs<UIA.IUIAutomation6>();
 
         /// <inheritdoc />
-        public override AutomationElement GetDesktop()
+        public override AutomationElement GetDesktop(CacheRequest? cacheRequest = null)
         {
             return Com.Call(() =>
             {
-                var desktop = CacheRequest.IsCachingActive
-                    ? NativeAutomation.GetRootElementBuildCache(CacheRequest.Current.ToNative(this))
+                var desktop = cacheRequest != null
+                    ? NativeAutomation.GetRootElementBuildCache(cacheRequest.ToNative(this))
                     : NativeAutomation.GetRootElement();
                 return WrapNativeElement(desktop);
             });
         }
 
         /// <inheritdoc />
-        public override AutomationElement FromPoint(Point point)
+        public override AutomationElement FromPoint(Point point, CacheRequest? cacheRequest = null)
         {
             return Com.Call(() =>
             {
                 var nativePoint = point.ToTagPoint();
-                var nativeElement = CacheRequest.IsCachingActive
-                    ? NativeAutomation.ElementFromPointBuildCache(nativePoint, CacheRequest.Current.ToNative(this))
+                var nativeElement = cacheRequest != null
+                    ? NativeAutomation.ElementFromPointBuildCache(nativePoint, cacheRequest.ToNative(this))
                     : NativeAutomation.ElementFromPoint(nativePoint);
                 return WrapNativeElement(nativeElement);
             });
         }
 
         /// <inheritdoc />
-        public override AutomationElement FromHandle(IntPtr hwnd)
+        public override AutomationElement FromHandle(IntPtr hwnd, CacheRequest? cacheRequest = null)
         {
             return Com.Call(() =>
             {
-                var nativeElement = CacheRequest.IsCachingActive
-                    ? NativeAutomation.ElementFromHandleBuildCache(hwnd, CacheRequest.Current.ToNative(this))
+                var nativeElement = cacheRequest != null
+                    ? NativeAutomation.ElementFromHandleBuildCache(hwnd, cacheRequest.ToNative(this))
                     : NativeAutomation.ElementFromHandle(hwnd);
                 return WrapNativeElement(nativeElement);
             });
         }
 
         /// <inheritdoc />
-        public override AutomationElement FocusedElement()
+        public override AutomationElement FocusedElement(CacheRequest? cacheRequest = null)
         {
             return Com.Call(() =>
             {
-                var nativeElement = CacheRequest.IsCachingActive
-                    ? NativeAutomation.GetFocusedElementBuildCache(CacheRequest.Current.ToNative(this))
+                var nativeElement = cacheRequest != null
+                    ? NativeAutomation.GetFocusedElementBuildCache(cacheRequest.ToNative(this))
                     : NativeAutomation.GetFocusedElement();
                 return WrapNativeElement(nativeElement);
             });

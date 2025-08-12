@@ -9,7 +9,7 @@ namespace SeraphSecure.FlaUI.Core
     /// <summary>
     /// A class which handles the cache requests.
     /// </summary>
-    public partial class CacheRequest
+    public class CacheRequest
     {
         /// <summary>
         /// Defines the reference mode of automation elements in the cache.
@@ -51,17 +51,9 @@ namespace SeraphSecure.FlaUI.Core
         {
             Properties.Add(property);
         }
-
-        /// <summary>
-        /// Activate the cache request.
-        /// </summary>
-        public IDisposable Activate()
-        {
-            Push(this);
-            return new CacheRequestActivation();
-        }
     }
 
+    /*
     public partial class CacheRequest
     {
         [ThreadStatic]
@@ -143,4 +135,5 @@ namespace SeraphSecure.FlaUI.Core
             }
         }
     }
+    */
 }

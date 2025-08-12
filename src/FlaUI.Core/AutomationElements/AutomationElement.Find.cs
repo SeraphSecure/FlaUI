@@ -10,35 +10,35 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
     public partial class AutomationElement : IAutomationElementFinder
     {
         /// <inheritdoc />
-        public AutomationElement[] FindAll(TreeScope treeScope, ConditionBase condition)
+        public AutomationElement[] FindAll(TreeScope treeScope, ConditionBase condition, CacheRequest? cacheRequest = null)
         {
-            return FrameworkAutomationElement.FindAll(treeScope, condition);
+            return FrameworkAutomationElement.FindAll(treeScope, condition, cacheRequest);
         }
 
         /// <inheritdoc />
-        public AutomationElement? FindFirst(TreeScope treeScope, ConditionBase condition)
+        public AutomationElement? FindFirst(TreeScope treeScope, ConditionBase condition, CacheRequest? cacheRequest = null)
         {
-            return FrameworkAutomationElement.FindFirst(treeScope, condition);
+            return FrameworkAutomationElement.FindFirst(treeScope, condition, cacheRequest);
         }
 
         /// <inheritdoc />
         public AutomationElement[] FindAllWithOptions(TreeScope treeScope, ConditionBase condition,
-            TreeTraversalOptions traversalOptions, AutomationElement root)
+            TreeTraversalOptions traversalOptions, AutomationElement root, CacheRequest? cacheRequest = null)
         {
-            return FrameworkAutomationElement.FindAllWithOptions(treeScope, condition, traversalOptions, root);
+            return FrameworkAutomationElement.FindAllWithOptions(treeScope, condition, traversalOptions, root, cacheRequest);
         }
 
         /// <inheritdoc />
         public AutomationElement? FindFirstWithOptions(TreeScope treeScope, ConditionBase condition,
-            TreeTraversalOptions traversalOptions, AutomationElement root)
+            TreeTraversalOptions traversalOptions, AutomationElement root, CacheRequest? cacheRequest = null)
         {
-            return FrameworkAutomationElement.FindFirstWithOptions(treeScope, condition, traversalOptions, root);
+            return FrameworkAutomationElement.FindFirstWithOptions(treeScope, condition, traversalOptions, root, cacheRequest);
         }
 
         /// <inheritdoc />
-        public AutomationElement? FindAt(TreeScope treeScope, int index, ConditionBase condition)
+        public AutomationElement? FindAt(TreeScope treeScope, int index, ConditionBase condition, CacheRequest? cacheRequest = null)
         {
-            return FrameworkAutomationElement.FindAt(treeScope, index, condition);
+            return FrameworkAutomationElement.FindAt(treeScope, index, condition, cacheRequest);
         }
 
         /// <summary>
@@ -106,9 +106,9 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// Finds the first child.
         /// </summary>
         /// <returns>The found element or null if no element was found.</returns>
-        public AutomationElement? FindFirstChild()
+        public AutomationElement? FindFirstChild(CacheRequest? cacheRequest = null)
         {
-            return FindFirst(TreeScope.Children, TrueCondition.Default);
+            return FindFirst(TreeScope.Children, TrueCondition.Default, cacheRequest);
         }
 
         /// <summary>
@@ -116,9 +116,9 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// </summary>
         /// <param name="automationId">The automation id.</param>
         /// <returns>The found element or null if no element was found.</returns>
-        public AutomationElement? FindFirstChild(string automationId)
+        public AutomationElement? FindFirstChild(string automationId, CacheRequest? cacheRequest = null)
         {
-            return FindFirst(TreeScope.Children, ConditionFactory.ByAutomationId(automationId));
+            return FindFirst(TreeScope.Children, ConditionFactory.ByAutomationId(automationId), cacheRequest);
         }
 
         /// <summary>
@@ -126,9 +126,9 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// </summary>
         /// <param name="condition">The condition.</param>
         /// <returns>The found element or null if no element was found.</returns>
-        public AutomationElement? FindFirstChild(ConditionBase condition)
+        public AutomationElement? FindFirstChild(ConditionBase condition, CacheRequest? cacheRequest = null)
         {
-            return FindFirst(TreeScope.Children, condition);
+            return FindFirst(TreeScope.Children, condition, cacheRequest);
         }
 
         /// <summary>
@@ -136,19 +136,19 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// </summary>
         /// <param name="conditionFunc">The condition method.</param>
         /// <returns>The found element or null if no element was found.</returns>
-        public AutomationElement? FindFirstChild(Func<ConditionFactory, ConditionBase> conditionFunc)
+        public AutomationElement? FindFirstChild(Func<ConditionFactory, ConditionBase> conditionFunc, CacheRequest? cacheRequest = null)
         {
             var condition = conditionFunc(ConditionFactory);
-            return FindFirstChild(condition);
+            return FindFirstChild(condition, cacheRequest);
         }
 
         /// <summary>
         /// Finds all children.
         /// </summary>
         /// <returns>The found elements or an empty list if no elements were found.</returns>
-        public AutomationElement[] FindAllChildren()
+        public AutomationElement[] FindAllChildren(CacheRequest? cacheRequest = null)
         {
-            return FindAll(TreeScope.Children, TrueCondition.Default);
+            return FindAll(TreeScope.Children, TrueCondition.Default, cacheRequest);
         }
 
         /// <summary>
@@ -156,9 +156,9 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// </summary>
         /// <param name="condition">The condition.</param>
         /// <returns>The found elements or an empty list if no elements were found.</returns>
-        public AutomationElement[] FindAllChildren(ConditionBase condition)
+        public AutomationElement[] FindAllChildren(ConditionBase condition, CacheRequest? cacheRequest = null)
         {
-            return FindAll(TreeScope.Children, condition);
+            return FindAll(TreeScope.Children, condition, cacheRequest);
         }
 
         /// <summary>
@@ -166,19 +166,19 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// </summary>
         /// <param name="conditionFunc">The condition method.</param>
         /// <returns>The found elements or an empty list if no elements were found.</returns>
-        public AutomationElement[] FindAllChildren(Func<ConditionFactory, ConditionBase> conditionFunc)
+        public AutomationElement[] FindAllChildren(Func<ConditionFactory, ConditionBase> conditionFunc, CacheRequest? cacheRequest = null)
         {
             var condition = conditionFunc(ConditionFactory);
-            return FindAllChildren(condition);
+            return FindAllChildren(condition, cacheRequest);
         }
 
         /// <summary>
         /// Finds the first descendant.
         /// </summary>
         /// <returns>The found element or null if no element was found.</returns>
-        public AutomationElement? FindFirstDescendant()
+        public AutomationElement? FindFirstDescendant(CacheRequest? cacheRequest = null)
         {
-            return FindFirst(TreeScope.Descendants, TrueCondition.Default);
+            return FindFirst(TreeScope.Descendants, TrueCondition.Default, cacheRequest);
         }
 
         /// <summary>
@@ -186,9 +186,9 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// </summary>
         /// <param name="automationId">The automation id.</param>
         /// <returns>The found element or null if no element was found.</returns>
-        public AutomationElement? FindFirstDescendant(string automationId)
+        public AutomationElement? FindFirstDescendant(string automationId, CacheRequest? cacheRequest = null)
         {
-            return FindFirst(TreeScope.Descendants, ConditionFactory.ByAutomationId(automationId));
+            return FindFirst(TreeScope.Descendants, ConditionFactory.ByAutomationId(automationId), cacheRequest);
         }
 
         /// <summary>
@@ -196,9 +196,9 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// </summary>
         /// <param name="condition">The condition.</param>
         /// <returns>The found element or null if no element was found.</returns>
-        public AutomationElement? FindFirstDescendant(ConditionBase condition)
+        public AutomationElement? FindFirstDescendant(ConditionBase condition, CacheRequest? cacheRequest = null)
         {
-            return FindFirst(TreeScope.Descendants, condition);
+            return FindFirst(TreeScope.Descendants, condition, cacheRequest);
         }
 
         /// <summary>
@@ -206,19 +206,19 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// </summary>
         /// <param name="conditionFunc">The condition method.</param>
         /// <returns>The found element or null if no element was found.</returns>
-        public AutomationElement? FindFirstDescendant(Func<ConditionFactory, ConditionBase> conditionFunc)
+        public AutomationElement? FindFirstDescendant(Func<ConditionFactory, ConditionBase> conditionFunc, CacheRequest? cacheRequest = null)
         {
             var condition = conditionFunc(ConditionFactory);
-            return FindFirstDescendant(condition);
+            return FindFirstDescendant(condition, cacheRequest);
         }
 
         /// <summary>
         /// Finds all descendants.
         /// </summary>
         /// <returns>The found elements or an empty list if no elements were found.</returns>
-        public AutomationElement[] FindAllDescendants()
+        public AutomationElement[] FindAllDescendants(CacheRequest? cacheRequest = null)
         {
-            return FindAll(TreeScope.Descendants, TrueCondition.Default);
+            return FindAll(TreeScope.Descendants, TrueCondition.Default, cacheRequest);
         }
 
         /// <summary>
@@ -226,9 +226,9 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// </summary>
         /// <param name="condition">The condition.</param>
         /// <returns>The found elements or an empty list if no elements were found.</returns>
-        public AutomationElement[] FindAllDescendants(ConditionBase condition)
+        public AutomationElement[] FindAllDescendants(ConditionBase condition, CacheRequest? cacheRequest = null)
         {
-            return FindAll(TreeScope.Descendants, condition);
+            return FindAll(TreeScope.Descendants, condition, cacheRequest);
         }
 
         /// <summary>
@@ -236,10 +236,10 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// </summary>
         /// <param name="conditionFunc">The condition method.</param>
         /// <returns>The found elements or an empty list if no elements were found.</returns>
-        public AutomationElement[] FindAllDescendants(Func<ConditionFactory, ConditionBase> conditionFunc)
+        public AutomationElement[] FindAllDescendants(Func<ConditionFactory, ConditionBase> conditionFunc, CacheRequest? cacheRequest = null)
         {
             var condition = conditionFunc(ConditionFactory);
-            return FindAllDescendants(condition);
+            return FindAllDescendants(condition, cacheRequest);
         }
 
         /// <summary>
@@ -270,9 +270,9 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// <param name="index">The index of the child to find.</param>
         /// <param name="condition">The condition.</param>
         /// <returns>The found element or null if no element was found.</returns>
-        public AutomationElement? FindChildAt(int index, ConditionBase? condition = null)
+        public AutomationElement? FindChildAt(int index, ConditionBase? condition = null, CacheRequest? cacheRequest = null)
         {
-            return FindAt(TreeScope.Children, index, condition ?? TrueCondition.Default);
+            return FindAt(TreeScope.Children, index, condition ?? TrueCondition.Default, cacheRequest);
         }
 
         /// <summary>
@@ -281,10 +281,10 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
         /// <param name="index">The index of the child to find.</param>
         /// <param name="conditionFunc">The condition method.</param>
         /// <returns>The found element or null if no element was found.</returns>
-        public AutomationElement? FindChildAt(int index, Func<ConditionFactory, ConditionBase> conditionFunc)
+        public AutomationElement? FindChildAt(int index, Func<ConditionFactory, ConditionBase> conditionFunc, CacheRequest? cacheRequest = null)
         {
             var condition = conditionFunc(ConditionFactory);
-            return FindChildAt(index, condition);
+            return FindChildAt(index, condition, cacheRequest);
         }
     }
 }

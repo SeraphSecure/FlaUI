@@ -96,48 +96,48 @@ namespace SeraphSecure.FlaUI.UIA3
         }
 
         /// <inheritdoc />
-        public override AutomationElement[] FindAll(TreeScope treeScope, ConditionBase condition)
+        public override AutomationElement[] FindAll(TreeScope treeScope, ConditionBase condition, CacheRequest? cacheRequest = null)
         {
-            var nativeFoundElements = CacheRequest.IsCachingActive
-                ? NativeElement.FindAllBuildCache((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), CacheRequest.Current.ToNative(Automation))
+            var nativeFoundElements = cacheRequest != null
+                ? NativeElement.FindAllBuildCache((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), cacheRequest.ToNative(Automation))
                 : NativeElement.FindAll((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition));
             return AutomationElementConverter.NativeArrayToManaged(Automation, nativeFoundElements);
         }
 
         /// <inheritdoc />
-        public override AutomationElement? FindFirst(TreeScope treeScope, ConditionBase condition)
+        public override AutomationElement? FindFirst(TreeScope treeScope, ConditionBase condition, CacheRequest? cacheRequest = null)
         {
-            UIA.IUIAutomationElement? nativeFoundElement = CacheRequest.IsCachingActive
-                ? NativeElement.FindFirstBuildCache((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), CacheRequest.Current.ToNative(Automation))
+            UIA.IUIAutomationElement? nativeFoundElement = cacheRequest != null
+                ? NativeElement.FindFirstBuildCache((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), cacheRequest.ToNative(Automation))
                 : NativeElement.FindFirst((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition));
             return AutomationElementConverter.NativeToManaged(Automation, nativeFoundElement);
         }
 
         /// <inheritdoc />
         public override AutomationElement[] FindAllWithOptions(TreeScope treeScope, ConditionBase condition,
-            TreeTraversalOptions traversalOptions, AutomationElement root)
+            TreeTraversalOptions traversalOptions, AutomationElement root, CacheRequest? cacheRequest = null)
         {
-            var nativeFoundElements = CacheRequest.IsCachingActive
-                ? NativeElement7.FindAllWithOptionsBuildCache((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), CacheRequest.Current.ToNative(Automation), (UIA.TreeTraversalOptions)traversalOptions, root.ToNative())
+            var nativeFoundElements = cacheRequest != null
+                ? NativeElement7.FindAllWithOptionsBuildCache((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), cacheRequest.ToNative(Automation), (UIA.TreeTraversalOptions)traversalOptions, root.ToNative())
                 : NativeElement7.FindAllWithOptions((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), (UIA.TreeTraversalOptions)traversalOptions, root.ToNative());
             return AutomationElementConverter.NativeArrayToManaged(Automation, nativeFoundElements);
         }
 
         /// <inheritdoc />
         public override AutomationElement? FindFirstWithOptions(TreeScope treeScope, ConditionBase condition,
-            TreeTraversalOptions traversalOptions, AutomationElement root)
+            TreeTraversalOptions traversalOptions, AutomationElement root, CacheRequest? cacheRequest = null)
         {
-            UIA.IUIAutomationElement? nativeFoundElement = CacheRequest.IsCachingActive
-                ? NativeElement7.FindFirstWithOptionsBuildCache((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), CacheRequest.Current.ToNative(Automation), (UIA.TreeTraversalOptions)traversalOptions, root.ToNative())
+            UIA.IUIAutomationElement? nativeFoundElement = cacheRequest != null
+                ? NativeElement7.FindFirstWithOptionsBuildCache((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), cacheRequest.ToNative(Automation), (UIA.TreeTraversalOptions)traversalOptions, root.ToNative())
                 : NativeElement7.FindFirstWithOptions((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), (UIA.TreeTraversalOptions)traversalOptions, root.ToNative());
             return AutomationElementConverter.NativeToManaged(Automation, nativeFoundElement);
         }
 
         /// <inheritdoc />
-        public override AutomationElement? FindAt(TreeScope treeScope, int index, ConditionBase condition)
+        public override AutomationElement? FindAt(TreeScope treeScope, int index, ConditionBase condition, CacheRequest? cacheRequest = null)
         {
-            var nativeFoundElements = CacheRequest.IsCachingActive
-                ? NativeElement.FindAllBuildCache((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), CacheRequest.Current.ToNative(Automation))
+            var nativeFoundElements = cacheRequest != null
+                ? NativeElement.FindAllBuildCache((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition), cacheRequest.ToNative(Automation))
                 : NativeElement.FindAll((UIA.TreeScope)treeScope, ConditionConverter.ToNative(Automation, condition));
             var nativeElement = nativeFoundElements.GetElement(index);
             return nativeElement == null ? null : AutomationElementConverter.NativeToManaged(Automation, nativeElement);
@@ -274,11 +274,11 @@ namespace SeraphSecure.FlaUI.UIA3
             return rawIds.Select(id => PropertyId.Find(Automation.AutomationType, id)).ToArray();
         }
 
-        public override AutomationElement? GetUpdatedCache()
+        public override AutomationElement? GetUpdatedCache(CacheRequest? cacheRequest = null)
         {
-            if (CacheRequest.Current != null)
+            if (cacheRequest != null)
             {
-                var updatedElement = NativeElement.BuildUpdatedCache(CacheRequest.Current.ToNative(Automation));
+                var updatedElement = NativeElement.BuildUpdatedCache(cacheRequest.ToNative(Automation));
                 return AutomationElementConverter.NativeToManaged(Automation, updatedElement);
             }
             return null;

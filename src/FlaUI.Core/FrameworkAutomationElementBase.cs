@@ -39,10 +39,11 @@ namespace SeraphSecure.FlaUI.Core
         /// Gets the desired property value. Throws an exception if the property is not supported or is not cached during a cached request.
         /// </summary>
         /// <param name="property">The <see cref="PropertyId"/> of the property to get the value from.</param>
+        /// <param name="cacheRequest">The <see cref="CacheRequest"/> to use when fetching the property.</param>
         /// <returns>The value of the property.</returns>
-        public object GetPropertyValue(PropertyId property)
+        public object GetPropertyValue(PropertyId property, CacheRequest? cacheRequest = null)
         {
-            return GetPropertyValue<object>(property);
+            return GetPropertyValue<object>(property, cacheRequest);
         }
 
         /// <summary>
@@ -50,17 +51,17 @@ namespace SeraphSecure.FlaUI.Core
         /// </summary>
         /// <typeparam name="T">The type of the value to get.</typeparam>
         /// <param name="property">The <see cref="PropertyId"/> of the property to get the value from.</param>
+        /// <param name="cacheRequest">The <see cref="CacheRequest"/> to use when fetching the property.</param>
         /// <returns>The value of the property.</returns>
-        public T GetPropertyValue<T>(PropertyId property)
+        public T GetPropertyValue<T>(PropertyId property, CacheRequest? cacheRequest = null)
         {
             if (Equals(property, PropertyId.NotSupportedByFramework))
             {
                 throw new NotSupportedByFrameworkException();
             }
-            var isCacheActive = CacheRequest.IsCachingActive;
             try
             {
-                var value = InternalGetPropertyValue(property.Id, isCacheActive, false);
+                var value = InternalGetPropertyValue(property.Id, cacheRequest != null, false);
                 if (value == Automation.NotSupportedValue)
                 {
                     throw new PropertyNotSupportedException(property);
@@ -69,13 +70,9 @@ namespace SeraphSecure.FlaUI.Core
             }
             catch (Exception ex)
             {
-                if (isCacheActive)
+                if (cacheRequest != null && !cacheRequest.Properties.Contains(property))
                 {
-                    var cacheRequest = CacheRequest.Current;
-                    if (!cacheRequest.Properties.Contains(property))
-                    {
-                        throw new PropertyNotCachedException(property, ex);
-                    }
+                    throw new PropertyNotCachedException(property, ex);
                 }
                 // Should actually never come here
                 throw;
@@ -90,7 +87,19 @@ namespace SeraphSecure.FlaUI.Core
         /// <returns>True if the property is supported and false otherwise.</returns>
         public bool TryGetPropertyValue(PropertyId property, [NotNullWhen(true)] out object? value)
         {
-            return TryGetPropertyValue<object>(property, out value);
+            return TryGetPropertyValue<object>(property, null, out value);
+        }
+
+        /// <summary>
+        /// Tries to get the property value. Throws an exception if the property is not cached during a cached request.
+        /// </summary>
+        /// <param name="property">The <see cref="PropertyId"/> of the property to get the value from.</param>
+        /// <param name="value">The out object where the value should be put. Is the default if the property is not supported.</param>
+        /// <param name="cacheRequest">The <see cref="CacheRequest"/> to use when fetching the property.</param>
+        /// <returns>True if the property is supported and false otherwise.</returns>
+        public bool TryGetPropertyValue(PropertyId property, CacheRequest? cacheRequest, [NotNullWhen(true)] out object? value)
+        {
+            return TryGetPropertyValue<object>(property, cacheRequest, out value);
         }
 
         /// <summary>
@@ -102,31 +111,39 @@ namespace SeraphSecure.FlaUI.Core
         /// <returns>True if the property is supported and false otherwise.</returns>
         public bool TryGetPropertyValue<T>(PropertyId property, [NotNullWhen(true)] out T? value)
         {
+            return TryGetPropertyValue<T>(property, null, out value);
+        }
+
+        /// <summary>
+        /// Tries to get the property value as the desired type. Throws an exception if the property is not cached during a cached request.
+        /// </summary>
+        /// <typeparam name="T">The type of the value to get.</typeparam>
+        /// <param name="property">The <see cref="PropertyId"/> of the property to get the value from.</param>
+        /// <param name="value">The out object where the value should be put. Is the default if the property is not supported.</param>
+        /// <param name="cacheRequest">The <see cref="CacheRequest"/> to use when fetching the property.</param>
+        /// <returns>True if the property is supported and false otherwise.</returns>
+        public bool TryGetPropertyValue<T>(PropertyId property, CacheRequest? cacheRequest, [NotNullWhen(true)] out T? value)
+        {
             if (Equals(property, PropertyId.NotSupportedByFramework))
             {
                 throw new NotSupportedByFrameworkException();
             }
-            var isCacheActive = CacheRequest.IsCachingActive;
             try
             {
-                var internalValue = InternalGetPropertyValue(property.Id, isCacheActive, false);
+                var internalValue = InternalGetPropertyValue(property.Id, cacheRequest != null, false);
                 if (internalValue == Automation.NotSupportedValue)
                 {
-                    value = default(T);
+                    value = default;
                     return false;
                 }
-                value = property.Convert<T>(Automation, internalValue);
+                value = property.Convert<T>(Automation, internalValue)!;
                 return true;
             }
             catch (Exception ex)
             {
-                if (isCacheActive)
+                if (cacheRequest != null && !cacheRequest.Properties.Contains(property))
                 {
-                    var cacheRequest = CacheRequest.Current;
-                    if (!cacheRequest.Properties.Contains(property))
-                    {
-                        throw new PropertyNotCachedException(property, ex);
-                    }
+                    throw new PropertyNotCachedException(property, ex);
                 }
                 // Should actually never come here
                 throw;
@@ -139,16 +156,15 @@ namespace SeraphSecure.FlaUI.Core
         /// <typeparam name="T">The type of the pattern to get.</typeparam>
         /// <param name="pattern">The <see cref="PatternId"/> of the pattern to get.</param>
         /// <returns>The native pattern.</returns>
-        public T GetNativePattern<T>(PatternId pattern)
+        public T GetNativePattern<T>(PatternId pattern, CacheRequest? cacheRequest = null)
         {
             if (Equals(pattern, PatternId.NotSupportedByFramework))
             {
                 throw new NotSupportedByFrameworkException();
             }
-            var isCacheActive = CacheRequest.IsCachingActive;
             try
             {
-                var nativePattern = InternalGetPattern(pattern.Id, isCacheActive);
+                var nativePattern = InternalGetPattern(pattern.Id, cacheRequest != null);
                 if (nativePattern == null)
                 {
                     throw new InvalidOperationException("Native pattern is null");
@@ -157,13 +173,9 @@ namespace SeraphSecure.FlaUI.Core
             }
             catch (Exception ex)
             {
-                if (isCacheActive)
+                if (cacheRequest != null && !cacheRequest.Patterns.Contains(pattern))
                 {
-                    var cacheRequest = CacheRequest.Current;
-                    if (!cacheRequest.Patterns.Contains(pattern))
-                    {
-                        throw new PatternNotCachedException(pattern, ex);
-                    }
+                    throw new PatternNotCachedException(pattern, ex);
                 }
                 throw new PatternNotSupportedException(pattern, ex);
             }
@@ -180,7 +192,7 @@ namespace SeraphSecure.FlaUI.Core
         {
             try
             {
-                nativePattern = GetNativePattern<T>(pattern);
+                nativePattern = GetNativePattern<T>(pattern)!;
                 return true;
             }
             catch (PatternNotSupportedException)
@@ -226,19 +238,19 @@ namespace SeraphSecure.FlaUI.Core
         protected abstract object InternalGetPattern(int patternId, bool cached);
 
         /// <inheritdoc />
-        public abstract AutomationElement[] FindAll(TreeScope treeScope, ConditionBase condition);
+        public abstract AutomationElement[] FindAll(TreeScope treeScope, ConditionBase condition, CacheRequest? cacheRequest = null);
 
         /// <inheritdoc />
-        public abstract AutomationElement? FindFirst(TreeScope treeScope, ConditionBase condition);
+        public abstract AutomationElement? FindFirst(TreeScope treeScope, ConditionBase condition, CacheRequest? cacheRequest = null);
 
         /// <inheritdoc />
-        public abstract AutomationElement[] FindAllWithOptions(TreeScope treeScope, ConditionBase condition, TreeTraversalOptions traversalOptions, AutomationElement root);
+        public abstract AutomationElement[] FindAllWithOptions(TreeScope treeScope, ConditionBase condition, TreeTraversalOptions traversalOptions, AutomationElement root, CacheRequest? cacheRequest = null);
 
         /// <inheritdoc />
-        public abstract AutomationElement? FindFirstWithOptions(TreeScope treeScope, ConditionBase condition, TreeTraversalOptions traversalOptions, AutomationElement root);
+        public abstract AutomationElement? FindFirstWithOptions(TreeScope treeScope, ConditionBase condition, TreeTraversalOptions traversalOptions, AutomationElement root, CacheRequest? cacheRequest = null);
 
         /// <inheritdoc />
-        public abstract AutomationElement? FindAt(TreeScope treeScope, int index, ConditionBase condition);
+        public abstract AutomationElement? FindAt(TreeScope treeScope, int index, ConditionBase condition, CacheRequest? cacheRequest = null);
 
         /// <summary>
         /// Tries to get a clickable point.
@@ -283,7 +295,7 @@ namespace SeraphSecure.FlaUI.Core
 
         public abstract PatternId[] GetSupportedPatterns();
         public abstract PropertyId[] GetSupportedProperties();
-        public abstract AutomationElement? GetUpdatedCache();
+        public abstract AutomationElement? GetUpdatedCache(CacheRequest? cacheRequest = null);
         public abstract AutomationElement[] GetCachedChildren();
         public abstract AutomationElement GetCachedParent();
         public abstract object GetCurrentMetadataValue(PropertyId targetId, int metadataId);

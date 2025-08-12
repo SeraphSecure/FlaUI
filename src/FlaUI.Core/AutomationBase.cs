@@ -102,23 +102,23 @@ namespace SeraphSecure.FlaUI.Core
         /// <summary>
         /// Gets the desktop (root) element.
         /// </summary>
-        public abstract AutomationElement GetDesktop();
+        public abstract AutomationElement GetDesktop(CacheRequest? cacheRequest = null);
 
         /// <summary>
         /// Creates an <see cref="AutomationElement" /> from a given point.
         /// </summary>
-        public abstract AutomationElement FromPoint(Point point);
+        public abstract AutomationElement FromPoint(Point point, CacheRequest? cacheRequest = null);
 
         /// <summary>
         /// Creates an <see cref="AutomationElement" /> from a given windows handle (HWND).
         /// </summary>
-        public abstract AutomationElement FromHandle(IntPtr hwnd);
+        public abstract AutomationElement FromHandle(IntPtr hwnd, CacheRequest? cacheRequest = null);
 
         /// <summary>
         /// Gets the currently focused element as an <see cref="AutomationElement"/>.
         /// </summary>
         /// <returns></returns>
-        public abstract AutomationElement FocusedElement();
+        public abstract AutomationElement FocusedElement(CacheRequest? cacheRequest = null);
 
         /// <summary>
         /// Registers for a focus changed event.

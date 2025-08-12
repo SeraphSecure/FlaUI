@@ -12,24 +12,36 @@ namespace SeraphSecure.FlaUI.Core
     public interface IAutomationProperty<T>
     {
         /// <summary>
-        /// Get the value of the property. Throws if the property is not supported or
-        /// if it is accessed in a caching context and it is not cached.
+        /// Get the value of the property. Throws if the property is not supported.
         /// </summary>
         T Value { get; }
 
         /// <summary>
         /// Gets the value of the property or the default for this property type if it is not supported.
-        /// Throws if the property is accessed in a caching context and it is not cached.
         /// </summary>
         T? ValueOrDefault { get; }
 
         /// <summary>
+        /// Gets the value of the property or the default for this property type if it is not supported.
+        /// </summary>
+        /// <param name="cacheRequest">The caching request to use.</param>
+        T? GetValueOrDefault(CacheRequest cacheRequest);
+
+        /// <summary>
         /// Tries to get the value of the property.
-        /// Throws if the property is accessed in a caching context and it is not cached.
         /// </summary>
         /// <param name="value">The value of the property. Contains the default if it is not supported.</param>
         /// <returns>True if the property is supported, false otherwise.</returns>
         bool TryGetValue([NotNullWhen(true)] out T? value);
+
+        /// <summary>
+        /// Tries to get the value of the property contained in the cache.
+        /// Throws if the property is not cached.
+        /// </summary>
+        /// <param name="value">The value of the property. Contains the default if it is not supported.</param>
+        /// <param name="cacheRequest">The cache request to use when getting the property.</param>
+        /// <returns>True if the property is supported, false otherwise.</returns>
+        bool TryGetValue(CacheRequest cacheRequest, [NotNullWhen(true)] out T? value);
 
         /// <summary>
         /// Gets a flag if the property is supported or not.
@@ -78,9 +90,22 @@ namespace SeraphSecure.FlaUI.Core
         }
 
         /// <inheritdoc />
+        public TVal? GetValueOrDefault(CacheRequest? cacheRequest)
+        {
+            TryGetValue(cacheRequest, out var value);
+            return value;
+        }
+
+        /// <inheritdoc />
         public bool TryGetValue([NotNullWhen(true)] out TVal? value)
         {
-            return FrameworkAutomationElement.TryGetPropertyValue(PropertyId, out value);
+            return FrameworkAutomationElement.TryGetPropertyValue(PropertyId, null, out value);
+        }
+
+        /// <inheritdoc />
+        public bool TryGetValue(CacheRequest? cacheRequest, [NotNullWhen(true)] out TVal? value)
+        {
+            return FrameworkAutomationElement.TryGetPropertyValue(PropertyId, cacheRequest, out value);
         }
 
         /// <inheritdoc />

@@ -91,13 +91,9 @@ namespace SeraphSecure.FlaUI.Core
                 automationElement.Automation.PropertyLibrary.PatternAvailability.AllForCurrentFramework.ToList().ForEach(x => cr.Add(x));
                 cr.TreeScope = TreeScope.Subtree;
                 cr.TreeFilter = TrueCondition.Default;
-                // Activate the cache request
-                using (cr.Activate())
-                {
-                    // Re-find the root element with caching activated
-                    automationElement = automationElement.FindFirst(TreeScope.Element, TrueCondition.Default)!;
-                    Details(stringBuilder, automationElement, String.Empty);
-                }
+                // Re-find the root element with caching
+                automationElement = automationElement.FindFirst(TreeScope.Element, TrueCondition.Default, cr)!;
+                Details(stringBuilder, automationElement, String.Empty, cr);
                 return stringBuilder.ToString();
             }
             catch (Exception ex)
@@ -107,29 +103,29 @@ namespace SeraphSecure.FlaUI.Core
             }
         }
 
-        private static void Details(StringBuilder stringBuilder, AutomationElement automationElement, string displayPadding)
+        private static void Details(StringBuilder stringBuilder, AutomationElement automationElement, string displayPadding, CacheRequest cacheRequest)
         {
             const string indent = "    ";
-            WriteDetail(automationElement, stringBuilder, displayPadding);
+            WriteDetail(automationElement, stringBuilder, displayPadding, cacheRequest);
             WritePattern(automationElement, stringBuilder, displayPadding);
             var children = automationElement.CachedChildren;
             foreach (var child in children)
             {
-                Details(stringBuilder, child, displayPadding + indent);
+                Details(stringBuilder, child, displayPadding + indent, cacheRequest);
             }
         }
 
-        private static void WriteDetail(AutomationElement automationElement, StringBuilder stringBuilder, string displayPadding)
+        private static void WriteDetail(AutomationElement automationElement, StringBuilder stringBuilder, string displayPadding, CacheRequest cacheRequest)
         {
-            WriteWithPadding(stringBuilder, "AutomationId: " + automationElement.Properties.AutomationId, displayPadding);
-            WriteWithPadding(stringBuilder, "ControlType: " + automationElement.Properties.ControlType, displayPadding);
-            WriteWithPadding(stringBuilder, "Name: " + automationElement.Properties.Name, displayPadding);
-            WriteWithPadding(stringBuilder, "HelpText: " + automationElement.Properties.HelpText, displayPadding);
-            WriteWithPadding(stringBuilder, "Bounding rectangle: " + automationElement.Properties.BoundingRectangle, displayPadding);
-            WriteWithPadding(stringBuilder, "ClassName: " + automationElement.Properties.ClassName, displayPadding);
-            WriteWithPadding(stringBuilder, "IsOffScreen: " + automationElement.Properties.IsOffscreen, displayPadding);
-            WriteWithPadding(stringBuilder, "FrameworkId: " + automationElement.Properties.FrameworkId, displayPadding);
-            WriteWithPadding(stringBuilder, "ProcessId: " + automationElement.Properties.ProcessId, displayPadding);
+            WriteWithPadding(stringBuilder, "AutomationId: " + automationElement.Properties.AutomationId.GetValueOrDefault(cacheRequest), displayPadding);
+            WriteWithPadding(stringBuilder, "ControlType: " + automationElement.Properties.ControlType.GetValueOrDefault(cacheRequest), displayPadding);
+            WriteWithPadding(stringBuilder, "Name: " + automationElement.Properties.Name.GetValueOrDefault(cacheRequest), displayPadding);
+            WriteWithPadding(stringBuilder, "HelpText: " + automationElement.Properties.HelpText.GetValueOrDefault(cacheRequest), displayPadding);
+            WriteWithPadding(stringBuilder, "Bounding rectangle: " + automationElement.Properties.BoundingRectangle.GetValueOrDefault(cacheRequest), displayPadding);
+            WriteWithPadding(stringBuilder, "ClassName: " + automationElement.Properties.ClassName.GetValueOrDefault(cacheRequest), displayPadding);
+            WriteWithPadding(stringBuilder, "IsOffScreen: " + automationElement.Properties.IsOffscreen.GetValueOrDefault(cacheRequest), displayPadding);
+            WriteWithPadding(stringBuilder, "FrameworkId: " + automationElement.Properties.FrameworkId.GetValueOrDefault(cacheRequest), displayPadding);
+            WriteWithPadding(stringBuilder, "ProcessId: " + automationElement.Properties.ProcessId.GetValueOrDefault(cacheRequest), displayPadding);
         }
 
         private static void WritePattern(AutomationElement automationElement, StringBuilder stringBuilder, string displayPadding)
