@@ -10,12 +10,12 @@
   <PropertyGroup Label="Package">
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageOutputPath>..\..\artifacts</PackageOutputPath>
-    <Version>5.0.1.0</Version>
+    <Version>5.0.1.1</Version>
     <Product>FlaUI</Product>
     <Authors>Seraph Secure</Authors>
     <Description>Library to use FlaUI with UIA3.</Description>
     <Copyright>Copyright (c) 2016-2025</Copyright>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/SeraphSecure/FlaUI</PackageProjectUrl>
     <PackageIcon>FlaUI.png</PackageIcon>
