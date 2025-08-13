@@ -47,6 +47,12 @@ namespace SeraphSecure.FlaUI.Core
         /// Gets a flag if the property is supported or not.
         /// </summary>
         bool IsSupported { get; }
+
+        /// <summary>
+        /// Gets a flag if the property is supported or not.
+        /// </summary>
+        /// <param name="cacheRequest">The cache request to use.</param>
+        bool GetIsSupported(CacheRequest? cacheRequest = null);
     }
 
     /// <summary>
@@ -110,6 +116,9 @@ namespace SeraphSecure.FlaUI.Core
 
         /// <inheritdoc />
         public bool IsSupported => TryGetValue(out TVal? _);
+
+        /// <inheritdoc />
+        public bool GetIsSupported(CacheRequest? cacheRequest = null) => TryGetValue(cacheRequest, out TVal? _);
 
         /// <summary>
         /// Implicit operator to convert the property object directly to its value.

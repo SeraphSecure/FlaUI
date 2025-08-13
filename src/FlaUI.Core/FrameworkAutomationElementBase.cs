@@ -136,8 +136,8 @@ namespace SeraphSecure.FlaUI.Core
                     value = default;
                     return false;
                 }
-                value = property.Convert<T>(Automation, internalValue)!;
-                return true;
+                value = property.Convert<T?>(Automation, internalValue);
+                return value != null;
             }
             catch (Exception ex)
             {
@@ -155,6 +155,7 @@ namespace SeraphSecure.FlaUI.Core
         /// </summary>
         /// <typeparam name="T">The type of the pattern to get.</typeparam>
         /// <param name="pattern">The <see cref="PatternId"/> of the pattern to get.</param>
+        /// <param name="cacheRequest">The <see cref="CacheRequest"/> to use when fetching the pattern.</param>
         /// <returns>The native pattern.</returns>
         public T GetNativePattern<T>(PatternId pattern, CacheRequest? cacheRequest = null)
         {
@@ -197,6 +198,25 @@ namespace SeraphSecure.FlaUI.Core
             }
             catch (PatternNotSupportedException)
             {
+                nativePattern = default;
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Tries to get the native pattern.
+        /// </summary>
+        /// <typeparam name="T">The type of the pattern to get.</typeparam>
+        /// <param name="pattern">The <see cref="PatternId"/> of the pattern to get.</param>
+        /// <param name="nativePattern">The out object where the pattern should be put. Is null if the pattern is not supported.</param>
+        /// <param name="cacheRequest">The <see cref="CacheRequest"/> to use when fetching the property.</param>
+        /// <returns>True if the pattern is supported and false otherwise.</returns>
+        public bool TryGetNativePattern<T>(PatternId pattern, CacheRequest? cacheRequest, [NotNullWhen(true)] out T? nativePattern)
+        {
+            try {
+                nativePattern = GetNativePattern<T>(pattern, cacheRequest)!;
+                return true;
+            } catch (PatternNotSupportedException) {
                 nativePattern = default;
                 return false;
             }

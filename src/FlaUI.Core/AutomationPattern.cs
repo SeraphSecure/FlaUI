@@ -22,6 +22,12 @@ namespace SeraphSecure.FlaUI.Core
         T? PatternOrDefault { get; }
 
         /// <summary>
+        /// Gets the pattern or null if it is not supported.
+        /// </summary>
+        /// <param name="cacheRequest">The caching request to use.</param>
+        T? GetPatternOrDefault(CacheRequest? cacheRequest = null);
+
+        /// <summary>
         /// Tries getting the pattern.
         /// </summary>
         /// <param name="pattern">The found pattern or null if it is not supported.</param>
@@ -29,9 +35,23 @@ namespace SeraphSecure.FlaUI.Core
         bool TryGetPattern([NotNullWhen(true)] out T? pattern);
 
         /// <summary>
+        /// Tries getting the pattern.
+        /// </summary>
+        /// <param name="pattern">The found pattern or null if it is not supported.</param>
+        /// <returns>True if the pattern is supported, false otherwise.</returns>
+        /// <param name="cacheRequest">The cache request to use when getting the pattern.</param>
+        bool TryGetPattern(CacheRequest? cacheRequest, [NotNullWhen(true)] out T? pattern);
+
+        /// <summary>
         /// Gets a boolean value which indicates, if the pattern is supported.
         /// </summary>
         bool IsSupported { get; }
+
+        /// <summary>
+        /// Gets a boolean value which indicates, if the pattern is supported.
+        /// </summary>
+        /// <param name="cacheRequest">The cache request to use.</param>
+        bool GetIsSupported(CacheRequest? cacheRequest);
     }
 
     /// <summary>
@@ -81,6 +101,13 @@ namespace SeraphSecure.FlaUI.Core
         }
 
         /// <inheritdoc />
+        public T? GetPatternOrDefault(CacheRequest? cacheRequest = null)
+        {
+            TryGetPattern(cacheRequest, out var ret);
+            return ret;
+        }
+
+        /// <inheritdoc />
         public bool TryGetPattern([NotNullWhen(true)] out T? pattern)
         {
             if (FrameworkAutomationElement.TryGetNativePattern(_patternId, out TNative? nativePattern))
@@ -93,6 +120,20 @@ namespace SeraphSecure.FlaUI.Core
         }
 
         /// <inheritdoc />
-        public bool IsSupported => TryGetPattern(out T _);
+        public bool TryGetPattern(CacheRequest? cacheRequest, [NotNullWhen(true)] out T? pattern)
+        {
+            if (FrameworkAutomationElement.TryGetNativePattern(_patternId, cacheRequest, out TNative? nativePattern)) {
+                pattern = _patternCreateFunc(FrameworkAutomationElement, nativePattern);
+                return true;
+            }
+            pattern = default;
+            return false;
+        }
+
+        /// <inheritdoc />
+        public bool IsSupported => TryGetPattern(out T? _);
+
+        /// <inheritdoc />
+        public bool GetIsSupported(CacheRequest? cacheRequest) => TryGetPattern(cacheRequest, out T? _);
     }
 }

@@ -103,6 +103,16 @@ namespace SeraphSecure.FlaUI.Core.AutomationElements
             }
         }
 
+        public bool GetIsAvailable(CacheRequest? cacheRequest)
+        {
+            try {
+                var processId = Properties.ProcessId.TryGetValue(cacheRequest, out _);
+                return true;
+            } catch {
+                return false;
+            }
+        }
+
         #region Convenience properties
         /// <summary>
         /// The direct framework type of the element.

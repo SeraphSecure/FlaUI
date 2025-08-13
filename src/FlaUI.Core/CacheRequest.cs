@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using SeraphSecure.FlaUI.Core.Conditions;
 using SeraphSecure.FlaUI.Core.Definitions;
 using SeraphSecure.FlaUI.Core.Identifiers;
@@ -52,88 +51,4 @@ namespace SeraphSecure.FlaUI.Core
             Properties.Add(property);
         }
     }
-
-    /*
-    public partial class CacheRequest
-    {
-        [ThreadStatic]
-        private static Stack<CacheRequest>? _cacheStack;
-        [ThreadStatic]
-        private static Stack<bool>? _forceNoCacheStack;
-
-        /// <summary>
-        /// Checks if a caching is currently active in the current context.
-        /// </summary>
-        public static bool IsCachingActive => (_forceNoCacheStack == null || _forceNoCacheStack.Count == 0) && Current != null;
-
-        /// <summary>
-        /// Gets the current cache request object.
-        /// </summary>
-        public static CacheRequest? Current
-        {
-            get
-            {
-                if (_cacheStack != null && _cacheStack.Count != 0)
-                {
-                    return _cacheStack.Peek();
-                }
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Pushes a stack request onto the stack.
-        /// </summary>
-        public static void Push(CacheRequest cacheRequest)
-        {
-            if (_cacheStack == null)
-            {
-                _cacheStack = new Stack<CacheRequest>();
-            }
-            _cacheStack.Push(cacheRequest);
-        }
-
-        /// <summary>
-        /// Pops a cache request from the stack.
-        /// </summary>
-        public static void Pop()
-        {
-            if (_cacheStack == null || _cacheStack.Count == 0)
-            {
-                throw new InvalidOperationException("No cache request available to pop");
-            }
-            _cacheStack.Pop();
-        }
-
-        public static IDisposable ForceNoCache()
-        {
-            return new ForceNoCacheActivation();
-        }
-
-        private class CacheRequestActivation : IDisposable
-        {
-            public void Dispose()
-            {
-                Pop();
-            }
-        }
-
-        private class ForceNoCacheActivation : IDisposable
-        {
-            public ForceNoCacheActivation()
-            {
-                if (_forceNoCacheStack == null)
-                {
-                    _forceNoCacheStack = new Stack<bool>();
-                }
-                _forceNoCacheStack.Push(true);
-            }
-
-            public void Dispose()
-            {
-                _forceNoCacheStack!.Pop();
-            }
-        }
-    }
-    */
 }
